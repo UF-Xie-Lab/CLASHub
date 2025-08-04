@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gene Expression</title>
+    <link rel="icon" href="Index_php/CLASH_favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/index2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Index_php/CLASHub_logo.png" alt="CLASH Logo" style="max-width: 600px; height: auto;">
+        </a>
+        <hr class="gradient-line">
+        <h1>Gene Expression</h1>
+    </header>
+
+    <main>
+        <section id="chart_section">
+            <canvas id="geneChart" width="1200" height="700"></canvas>
+            <!-- Add Download CSV Button -->
+            <button id="downloadCSV">Download CSV</button>
+        </section>
+        
+        <style>
+            #chart_section {
+                width: 90%; /* Center the chart */
+                margin: 0 auto;
+                text-align: center;
+                position: relative; /* Ensure absolute positioning works for children */
+            }
+    
+            #geneChart {
+                width: 600px; /* Responsive canvas width */
+                height: 350px; /* Responsive canvas height */
+                display: inline-block;
+            }
+    
+            #downloadCSV {
+                position: absolute; /* Position the button absolutely */
+                top: 10px; /* Adjust the vertical position */
+                left: 10px; /* Adjust the horizontal position */
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                cursor: pointer;
+                font-size: 14px;
+                z-index: 10; /* Ensure the button is above other elements */
+            }
+    
+            #downloadCSV:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </main>
+    
+    <footer>
+        <p>Copyright &copy; 2024 Xie Lab. Department of Biochemistry and Molecular Biology, University of Florida, USA.</p>
+    </footer>
+    <!-- 引用新的JavaScript文件 -->
+    <script src="target_abundance_php/target_abundance.js"></script>
+</body>
+</html>

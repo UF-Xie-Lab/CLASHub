@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASHub Feedback</title>
+    <link rel="stylesheet" href="css/index2.css"> <!-- 公共样式 -->
+    <link rel="stylesheet" href="css/feedback.css"> <!-- 反馈页面样式 -->
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Index_php/CLASHub_logo.png" alt="CLASH Logo" style="max-width: 600px; height: auto;">
+        </a>
+        <hr class="gradient-line">
+    </header>
+
+    <main>
+        <div class="feedback-container">
+            <h1>Contribute to CLASHub</h1>
+            <p>Welcome to the CLASHub feedback page. Our platform is designed to support miRNA research by offering simple, fast, and widely applicable tools and datasets.</p>
+            <p>We welcome your contributions, suggestions, or feedback on improving our platform. If you have issues, requests for new features, or ideas to share, please let us know.</p>
+            
+            <form action="feedback_php/process_feedback.php" method="POST" class="feedback-form">
+                <label for="email">Your Email *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="name">Preferred Name *</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="institution">Your Institution *</label>
+                <input type="text" id="institution" name="institution" required>
+
+                <label for="details">Details *</label>
+                <textarea id="details" name="details" rows="5" required placeholder="Enter details about your feedback, suggestions, or dataset contributions."></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+            
+            <p>We appreciate your input and look forward to working together to improve CLASHub.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2024 Xie Lab. Department of Biochemistry and Molecular Biology, University of Florida, USA.</p>
+    </footer>
+</body>
+</html>

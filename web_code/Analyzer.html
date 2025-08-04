@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASHub 1.0</title>
+    <link rel="icon" href="Index_php/CLASH_favicon.png" type="image/png">
+    <link rel="stylesheet" href="./css/index2.css">
+    <!-- Disable caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 引入 jQuery 和 jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- 引入 jQuery UI 的 CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body class="analyzer">
+    <header>
+        <a href="index.html">
+            <img src="Index_php/CLASHub_logo.png" alt="CLASH Logo" style="max-width: 600px; height: auto;">
+        </a>
+    </header>
+    <nav class="horizontal-menu">
+        <ul>
+            <li><a href="index.html">Database</a></li>
+            <li><a class="current" href="Analyzer.html">Analyzer</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="leftMenu">
+            <ul>
+                <li id="menu-clash" data-form="hyb" onclick="switchForm('hyb', 'menu-clash')">CLASH</li>
+                <li id="menu-aqseq" data-form="aqseq" onclick="switchForm('aqseq', 'menu-aqseq')">miRNA-seq</li>
+                <li id="menu-RNAseq" data-form="RNAseq" onclick="switchForm('RNAseq', 'menu-RNAseq')">RNA-seq</li>
+                <li id="menu-cumulativeCurve" data-form="CumulativeCurve" onclick="switchForm('CumulativeCurve', 'menu-cumulativeCurve')">Cumulative Fraction Curve</li>
+                <li id="menu-jobStatus" data-form="jobStatus">Job Status</li>
+            </ul>
+        </div>
+
+        <div id="formAndImageContainer"> 
+            <div id="formSectionContainer">
+                <div id="hyb" class="form-section">
+                    <form id="hyb_uploadForm" enctype="multipart/form-data">
+                        <div>
+                            <label>
+                                <input type="radio" name="hyb_uploadType" value="fastq" checked onchange="hyb_toggleUploadType()">
+                                Upload <span style="color: red;">Paired-End FASTQ.gz</span>
+                            </label>
+                            
+                            <label>
+                                <input type="radio" name="hyb_uploadType" value="fasta" onchange="hyb_toggleUploadType()">
+                                Upload <span style="color: red;">Cleaned FASTA.gz</span>
+                            </label>
+                        </div>
+                
+                        <div id="hyb_fastqUpload">
+                            <section>
+                                <label for="hyb_fileToUpload_fastq1">Choose <strong>Read 1 (R1)</strong> file (.fastq.gz):</label>
+                                <input type="file" id="hyb_fileToUpload_fastq1" name="hyb_fileToUpload_fastq1" required accept=".gz">
+                            </section>
+                            <p id="fileNameDisplay_hyb_fastq1"></p>
+                            <section>
+                                <label for="hyb_fileToUpload_fastq2">Choose <strong>Read 2 (R2)</strong> file (.fastq.gz):</label>
+                                <input type="file" id="hyb_fileToUpload_fastq2" name="hyb_fileToUpload_fastq2" required accept=".gz">
+                            </section>
+                            <p id="fileNameDisplay_hyb_fastq2"></p>
+                
+                            <section>
+                                <label for="hyb_fivePrimeAdapter">5' Adapter Sequence<br><span style="font-size: smaller;">(default: GATCGTCGGACTGTAGAACT)</span>:</label>
+                                <input type="text" id="hyb_fivePrimeAdapter" name="hyb_fivePrimeAdapter" class="uniform-width" placeholder="GATCGTCGGACTGTAGAACT">
+                            </section>
+
+                            
+                            <section>
+                                <label for="hyb_threePrimeAdapter">3' Adapter Sequence <span style="font-size: smaller;">(default: TGGAATTCTCGGGTGCCAAG)</span>:</label>
+                                <input type="text" id="hyb_threePrimeAdapter" name="hyb_threePrimeAdapter" class="uniform-width" placeholder="TGGAATTCTCGGGTGCCAAG">
+                            </section>
+                        </div>
+                
+                        <div id="hyb_fastaUpload" style="display:none;">
+                            <section>
+                                <label for="hyb_fileToUpload_fasta">Choose <strong>Cleaned FASTA</strong> file (.fasta.gz):</label>
+                                <input type="file" id="hyb_fileToUpload_fasta" name="hyb_fileToUpload_fasta" class="uniform-width" required accept=".gz">
+                            </section>
+                            <p id="fileNameDisplay_hyb_fasta"></p>
+                        </div>
+                
+                        <section>
+                            <label for="hyb_species">Select species for analysis:</label>
+                            <select id="hyb_species" name="hyb_species" class="uniform-width" required>
+                                <option value="">Select</option>
+                                <option value="Human">Human</option>
+                                <option value="Mouse">Mouse</option>
+                                <option value="D.melanogaster">Drosophila</option>
+                                <option value="C.elegans">C.elegans</option>
+                            </select>
+                        </section>
+                
+                        <section>
+                            <label for="hyb_outputFileName">Output file name (without extension):</label>
+                            <input type="text" id="hyb_outputFileName" name="hyb_outputFileName" class="uniform-width" required placeholder="Sample1">
+                        </section>
+                
+                        <section>
+                            <label for="hyb_email">Your Email (results will be sent here):</label>
+                            <input type="email" id="hyb_email" name="email" class="uniform-width" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'.">
+                        </section>
+                
+                        <button type="submit" id="hyb_uploadButton">Submit Request</button>
+                    </form>
+                    <aside>
+                        <div id="hyb_progressContainer1" style="display: flex; align-items: center; margin-top: 5px;">
+                            <div id="hyb_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;">
+                                <div id="hyb_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div>
+                            </div>
+                            <p id="hyb_progressText1" style="margin-left: 10px;"></p>
+                        </div>
+                        
+                        <div id="hyb_progressContainer2" style="display: flex; align-items: center; margin-top: 5px;">
+                            <div id="hyb_progressBarContainer2" style="width: 50%; background-color: transparent; border-radius: 10px;">
+                                <div id="hyb_progressBar2" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div>
+                            </div>
+                            <p id="hyb_progressText2" style="margin-left: 10px;"></p>
+                        </div>
+                    </aside>
+                    <div id="hyb_resultContainer" style="display: none;"></div>
+                </div>
+                
+                <div id="aqseq" class="form-section">
+                    <form id="aqseq_uploadForm" enctype="multipart/form-data">
+                        <div>
+                            <label>
+                                <input type="radio" name="aqseq_analysisType" value="aqPairedEndRead" checked onchange="aqseq_toggleAnalysisType()">
+                                Upload <span style="color: red;">Paired-End FASTQ.gz</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="aqseq_analysisType" value="aqSingleEndRead" onchange="aqseq_toggleAnalysisType()">
+                                Upload <span style="color: red;">Single-End FASTQ.gz</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="aqseq_analysisType" value="CleanRead" onchange="aqseq_toggleAnalysisType()">
+                                Upload <span style="color: red;">Cleaned FASTA.gz</span>
+                            </label>
+                        </div>
+                
+                        <div id="aqseq_PairedEnd" style="display: block;">
+                            <div id="pairedEndSamplesContainer">
+                                <!-- Paired-end samples will be dynamically generated here -->
+                            </div>
+                            
+                        </div>
+                        <button type="button" id="addAqseq_PairedEndSampleButton" onclick="addAqseq_PairedEndSample()">Add a sample</button>
+                
+                        <div id="aqseq_SingleEnd" style="display: none;">
+                            <div id="singleEndSamplesContainer">
+                                <!-- Single-end samples will be dynamically generated here -->
+                            </div>
+                            
+                        </div>
+                        <button type="button" id="addAqseq_SingleEndSampleButton" onclick="addAqseq_SingleEndSample()">Add a sample</button>
+
+                        <div id="aqseq_CleanedFasta" style="display: none;">
+                            <div id="aqseq_CleanedFastaSamplesContainer">
+                                <!-- Single-end samples will be dynamically generated here -->
+                            </div>
+                            
+                        </div>
+                        <button type="button" id="addAqseq_CleanedFastaSampleButton" onclick="addAqseq_CleanedFastaSample()">Add a sample</button>
+
+                        <section> 
+                            <label for="aqseq_species">Select species for analysis:</label> 
+                            <select id="aqseq_species" name="aqseq_species" class="uniform-width" required> 
+                                <option value="">Select</option> 
+                                <option value="Human">Human</option> 
+                                <option value="Mouse">Mouse</option> 
+                                <option value="D.melanogaster">Drosophila</option> 
+                                <option value="C.elegans">C.elegans</option> 
+                            </select> 
+                        </section> 
+                        
+                        <section> 
+                            <label for="aqseq_email">Your Email (results will be sent here):</label> 
+                            <input type="email" id="aqseq_email" name="aqseq_email" class="uniform-width" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'."> 
+                        </section> 
+                        
+                        <button type="submit" id="aqseq_uploadButton">Submit Request</button> 
+                    </form> 
+                    <div id="aqseqProgressBarsContainer"></div> <!-- Container for dynamically generated progress bars -->
+                    
+                    <aside> 
+                        <div style="display: flex; align-items: center; margin-top: 5px;"> 
+                            <div id="aqseq_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;"> 
+                                <div id="aqseq_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div> 
+                            </div> 
+                            <p id="aqseq_progressText1" style="margin-left: 10px;"></p> 
+                        </div> 
+                        <div style="display: flex; align-items: center; margin-top: 5px;"> 
+                            <div id="aqseq_progressBarContainer2" style="width: 50%; background-color: transparent; border-radius: 10px;"> 
+                                <div id="aqseq_progressBar2" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div> 
+                            </div> 
+                            <p id="aqseq_progressText2" style="margin-left: 10px;"></p> 
+                        </div> 
+                    </aside> 
+                </div>
+                    
+                <div id="RNAseq" class="form-section">
+                    <form id="RNAseq_uploadForm" enctype="multipart/form-data">
+                        <div>
+                            <label>
+                                <input type="radio" name="RNAseq_analysisType" value="TPM" checked onchange="RNAseq_toggleAnalysisType()">
+                                Upload <span style="color: red;">Paired-End FASTQ.gz</span> to quantify gene expression<br>
+                            </label>
+                            <label>
+                                <input type="radio" name="RNAseq_analysisType" value="TPM_DESeq2" onchange="RNAseq_toggleAnalysisType()">
+                                Upload <span style="color: red;">Paired-End FASTQ.gz</span> to perform differential gene expression<br>
+                            </label>
+                        </div>
+                
+                        <!-- 添加控制组和处理组的容器 -->
+                        <div id="DESeq2Groups" style="display: none;">
+                            <div id="controlGroup">
+                                <h3>Control Group</h3>
+                                <div id="controlSamples">
+                                    <!-- Control samples will be added here dynamically -->
+                                </div>
+                                <button type="button" id="addControlSampleButton" onclick="addControlSample()">Add Control Sample</button>
+                            </div>
+                
+                            <div id="treatmentGroup">
+                                <h3>Treatment Group</h3>
+                                <div id="treatmentSamples">
+                                    <!-- Treatment samples will be added here dynamically -->
+                                </div>
+                                <button type="button" id="addTreatmentSampleButton" onclick="addTreatmentSample()">Add Treatment Sample</button>
+                            </div>
+                        </div>
+                        
+                        <div id="RNAseq_TPM"> <!-- Container for dynamic sample fields -->
+                            <!-- 动态生成样品上传表单 -->
+                        </div>
+                        
+                        <button type="button" id="addSampleButton" onclick="addSample()">+</button> <!-- Button to add more samples --> 
+                        <section> 
+                            <label for="RNAseq_species">Select species for analysis:</label> 
+                            <select id="RNAseq_species" name="RNAseq_species" class="uniform-width" required> 
+                                <option value="">Select</option> 
+                                <option value="Human">Human</option> 
+                                <option value="Mouse">Mouse</option> 
+                                <option value="D.melanogaster">Drosophila</option> 
+                                <option value="C.elegans">C.elegans</option> 
+                            </select> 
+                        </section> 
+                        <section> 
+                            <label for="RNAseq_email">Your Email (results will be sent here):</label> 
+                            <input type="email" id="RNAseq_email" name="email" class="uniform-width" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'."> 
+                        </section> 
+                        <button type="submit" id="RNAseq_uploadButton">Submit Request</button> 
+                    </form> 
+                    <div id="progressBarsContainer"></div> <!-- 添加这个容器来放置动态生成的进度条 -->
+                    <aside> 
+                        <div style="display: flex; align-items: center; margin-top: 5px;"> 
+                            <div id="RNAseq_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;"> 
+                                <div id="RNAseq_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div> 
+                            </div> 
+                            <p id="RNAseq_progressText1" style="margin-left: 10px;"></p> 
+                        </div> 
+                        <div style="display: flex; align-items: center; margin-top: 5px;"> 
+                            <div id="RNAseq_progressBarContainer2" style="width: 50%; background-color: transparent; border-radius: 10px;"> 
+                                <div id="RNAseq_progressBar2" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div> 
+                            </div> 
+                            <p id="RNAseq_progressText2" style="margin-left: 10px;"></p> 
+                        </div> 
+                    </aside> 
+                </div>
+                
+                <div id="CumulativeCurve" class="form-section active">
+                    <form id="CumulativeCurveUploadForm" enctype="multipart/form-data">
+                        <section>
+                            <label for="CumulativeCurve_fileToUpload">
+                                Upload <span style="color: red;">Differential Expression CSV</span><br></label>
+                            <div class="custom-file-input">
+                                <button type="button" id="customButton_CumulativeCurve_file">Select File</button>
+                                <span id="CumulativeCurve_fileNameDisplay">No file selected</span>
+                                <input type="file" id="CumulativeCurve_fileToUpload" name="CumulativeCurve_fileToUpload" required accept=".csv" style="display: none;">
+                            </div>
+                        </section>
+                
+                        <section>
+                            <label for="CumulativeCurve_species">Select species for analysis:</label>
+                            <select id="CumulativeCurve_species" name="species" required class="uniform-width">
+                                <option value="">Select</option>
+                                <option value="Human">Human</option>
+                                <option value="Mouse">Mouse</option>
+                                <option value="D.melanogaster">Drosophila</option>
+                                <option value="C.elegans">C.elegans</option>
+                            </select>
+                        </section>
+
+                        <section>
+                            <label for="CumulativeCurve_mirnaName">miRNA name:</label>
+                            <input type="text" id="CumulativeCurve_mirnaName" name="CumulativeCurve_mirnaName" required placeholder="e.g., hsa-miR-31-5p" class="uniform-width">
+                        </section>
+                
+                        <section>
+                            <label for="CumulativeCurve_BaseMean">BaseMean threshold (default 100):</label>
+                            <input type="text" id="CumulativeCurve_BaseMean" name="CumulativeCurve_BaseMean" required placeholder="100" class="uniform-width">
+                        </section>
+                
+                        <section>
+                            <label for="CumulativeCurve_outputFileName">Output file name (without extension):</label>
+                            <input type="text" id="CumulativeCurve_outputFileName" name="CumulativeCurve_outputFileName" required placeholder="OutputFile" class="uniform-width">
+                        </section>
+                
+                        <section>
+                            <label for="CumulativeCurve_email">Your Email (results will be sent here):</label>
+                            <input type="email" id="CumulativeCurve_email" name="CumulativeCurve_email" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'." class="uniform-width">
+                        </section>
+                
+                        <section>
+                            <button type="submit" id="CumulativeCurve_uploadButton">Submit Request</button>
+                        </section>
+                    </form>
+                    <aside>
+                        <div id="CumulativeCurve_progressContainer1" style="display: flex; align-items: center; margin-top: 5px;">
+                            <div id="CumulativeCurve_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;">
+                                <div id="CumulativeCurve_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div>
+                            </div>
+                            <p id="CumulativeCurve_progressText1" style="margin-left: 10px;"></p>
+                        </div>
+                    </aside>
+                </div>
+
+                <div id="jobStatus" class="form-section job-status-panel" style="display:none;">
+                  <div class="job-status-content">
+                    <h2>Job Queue Status</h2>
+                    <div class="status-summary">
+                        <p><strong>Tasks running:</strong> <span id="runningCount">--</span></p>
+                        <p><strong>Tasks in queue:</strong> <span id="queuedCount">--</span></p>
+                    </div>
+                    <section class="job-check">
+                      <label for="jobIdInput">Check Job ID:</label>
+                      <input type="text" id="jobIdInput" placeholder="e.g., Job ID" />
+                      <button type="button" id="jobIdCheck">Check Status</button>
+                    </section>
+                    <div id="jobResult" class="job-result"></div>
+                  </div>
+                </div>
+                
+            </div> 
+            <div id="imageContainer"> 
+                <div id="default_imageContainer" class="image-section" style="display: block;">
+                    <img id="default_image" src="image/Analyzer_info.png?v=20250501.3" alt="Overview of Analysis Tools">
+                </div>
+                <div id="hyb_imageContainer" class="image-section" style="display: none;">
+                    <img id="hyb_image" src="image/CLASH_pipeline_fastq.png" alt="CLASH Analysis Pipeline"">
+                </div>
+                <div id="aqseq_imageContainer" class="image-section" style="display: none;">
+                    <img id="aqseq_image" src="image/miRNA_pipeline_pairedfastq.png" alt="AQ-seq Analysis Pipeline"">
+                </div>
+                <div id="RNAseq_imageContainer" class="image-section" style="display: none;">
+                    <img id="RNAseq_image" src="image/RNAseq_pipeline_TPM.png" alt="RNA-seq TPM Analysis Pipeline">
+                </div>
+                <div id="CumulativeCurve_imageContainer" class="image-section" style="display: none;">
+                    <img id="CumulativeCurve_image" src="image/CumulativeCurve_pipeline.png" alt="Cumulative Fraction Curve Analysis Pipeline">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./javascripts/hyb.js?v=6"></script>
+    <script src="./javascripts/AQseq.js?v=20250501"></script>
+    <script src="./javascripts/RNAseq.js?v=20250501"></script>
+    <script src="./javascripts/Analyzer_main.js?v=20250501"></script>
+    <script src="./javascripts/CumulativeCurve.js?v=20250501"></script>
+
+    <footer>
+        <p>© 2025 CLASHub 1.0. All rights reserved. Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a></p>
+    </footer>
+
+</body>
+</html>

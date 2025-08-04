@@ -1,0 +1,86 @@
+/* 为反馈页面设置全局背景色和字体 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 反馈容器整体样式 */
+.feedback-container {
+    max-width: 600px; /* 设置页面宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    padding: 20px;
+    background-color: #ffffff; /* 白色背景 */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* 居中对齐所有内容 */
+}
+
+/* 标题样式 */
+.feedback-container h1 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* 文本段落样式 */
+.feedback-container p {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* 表单样式 */
+.feedback-form {
+    display: flex;
+    flex-direction: column; /* 垂直排列表单字段 */
+    gap: 15px; /* 每个表单字段之间的间距 */
+    text-align: left; /* 标签和输入框左对齐 */
+}
+
+/* 表单字段通用样式 */
+.feedback-form label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333333;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%; /* 输入框和文本区域占据容器宽度 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* 按钮样式 */
+.feedback-form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background-color: #0056b3;
+}
+
+/* 表单复选框 */
+.feedback-form label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+}
