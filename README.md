@@ -3,6 +3,7 @@
 CLASHub is a comprehensive platform for the integration, visualization, and analysis of CLASH data, RNA-seq, and miRNA-seq datasets.  
 The software supports analyses such as cumulative fraction curves, differential expression, and miRNA–target interaction mapping.
 
+Website: [https://clashub.rc.ufl.edu/Analyzer.html](https://clashub.rc.ufl.edu/index.html)
 Website: [https://clashub.rc.ufl.edu/Analyzer.html](https://clashub.rc.ufl.edu/Analyzer.html)
 
 ---
