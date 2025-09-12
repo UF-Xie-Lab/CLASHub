@@ -20,7 +20,6 @@ CLASHub is an integrated platform that combines a curated database of CLASH-deri
 
 Make sure the following Python packages are installed:
 
-```bash
 pip install matplotlib seaborn numpy pandas biopython plotly scipy jinja2
 
 Also make sure your Python installation includes:
@@ -28,27 +27,6 @@ Also make sure your Python installation includes:
 csv, getopt, collections, os, re, sys, glob, subprocess, logging, traceback
 
 These are all part of Python’s standard library.
-
-⸻
-
-2. ⚙Installation Guide
-	1.	Clone this repository:
-
-git clone https://github.com/UF-Xie-Lab/CLASHub.git
-cd CLASHub
-
-	2.	Create a virtual environment (optional but recommended):
-
-python3.12 -m venv venv
-source venv/bin/activate
-
-	3.	Install required packages:
-
-pip install -r requirements.txt
-
-Typical install time: ~2 minutes on a standard desktop computer with internet.
-
-⸻
 
 3. Demo
 
@@ -116,8 +94,4 @@ All source code:
 Demo data available at:
 🔗 https://clashub.rc.ufl.edu/Analyzer.html
 
----
 
-你可以把上面的内容粘贴进你的 `README.md` 文件，然后打包进 `.zip` 文件提交给 Nature 编辑部，或放进你的 GitHub repo 主页。
-
-如果你还需要我帮你生成 `requirements.txt`、演示脚本或补充别的 checklist 项，随时告诉我！
