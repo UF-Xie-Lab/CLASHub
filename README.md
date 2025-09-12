@@ -1,12 +1,6 @@
-当然可以。以下是你可以直接复制粘贴使用的 完整 README.md Markdown 文件内容，符合 Nature 要求 checklist 中的每一项内容，并结合了你提供的 CLASHub 软件特性与使用方式：
+# CLASHub:an integrated database and analytical platform for microRNA-target interactions
 
-⸻
-
-
-# CLASHub: An Integrated Platform for Analyzing miRNA-Target Interactions
-
-CLASHub is a comprehensive software suite designed to analyze CLASH, miRNA-seq, and RNA-seq datasets for studying miRNA-target interactions and miRNA regulatory mechanisms. It powers the analysis tools behind [https://clashub.rc.ufl.edu](https://clashub.rc.ufl.edu).
-
+CLASHub is an integrated platform that combines a curated database of CLASH-derived miRNA–target interactions with powerful tools for analyzing CLASH, miRNA-seq, and RNA-seq datasets. [https://clashub.rc.ufl.edu](https://clashub.rc.ufl.edu).
 ---
 
 ## 📦 Required Content Summary
