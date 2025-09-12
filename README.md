@@ -188,4 +188,15 @@ The web-based interface dynamically passes uploaded files to the backend for aut
 
 ---
 
-All analyses are powered by the CLASHub Python backend (`clashub.py`) and can be reproduced with proper inputs and environment setup.
+## 8. Reproducing Results from the Manuscript (Optional)
+
+The analysis described in the manuscript was performed using CLASHub's web platform and backend pipeline (`clashub.py`). To reproduce the quantitative results:
+
+1. Download demo or raw datasets from: [https://clashub.rc.ufl.edu/Analyzer.html](https://clashub.rc.ufl.edu/Analyzer.html)
+2. Follow the usage instructions in Section 3–7 of this README to run:
+   - CLASH hybrid identification
+   - RNA-seq differential analysis
+   - AQ-miRNA-seq quantification
+   - cumulative fraction curve analysis
+3. Use the output `.csv` files to recreate figures as described in the manuscript.
+
