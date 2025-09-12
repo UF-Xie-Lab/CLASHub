@@ -1,6 +1,6 @@
 # CLASHub:an integrated database and analytical platform for microRNA-target interactions
 
-CLASHub is an integrated platform that combines a curated database of CLASH-derived miRNA–target interactions with powerful tools for analyzing CLASH, miRNA-seq, and RNA-seq datasets. [https://clashub.rc.ufl.edu](https://clashub.rc.ufl.edu).
+[https://clashub.rc.ufl.edu](https://clashub.rc.ufl.edu).
 ---
 
 ## Required Content Summary
@@ -46,6 +46,7 @@ clashub.py is not meant to be run directly by users. It powers the backend of th
 ## 3. 🧰 Instructions for Use
 
 Users are encouraged to use the CLASHub Web Platform to upload their own datasets and perform analysis. The Python backend (including clashub.py) handles:
+
 	•	CLASH chimeric read processing
 	•	RNA-seq and miRNA-seq normalization
 	•	Differential expression analysis
