@@ -28,9 +28,9 @@ csv, getopt, collections, os, re, sys, glob, subprocess, logging, traceback
 
 These are all part of Python’s standard library.
 
-3. Demo
+## 2. Demo
 
-📁 Input Data
+Input Data
 	•	Visit https://clashub.rc.ufl.edu/Analyzer.html
 	•	Download the demo datasets for:
 	•	CLASH data
@@ -38,60 +38,19 @@ These are all part of Python’s standard library.
 	•	miRNA-seq data
 	•	Differentially expressed genes (.csv)
 
-▶️ Run Instructions
+Run Instructions
 
-⚠️ clashub.py is not meant to be run directly by users. It powers the backend of the CLASHub web platform.
-To test the software locally for peer-review purposes:
+clashub.py is not meant to be run directly by users. It powers the backend of the CLASHub web platform.
 
-python clashub.py --demo
 
-A simple log message or plot will be generated to demonstrate module execution.
-Expected run time: < 1 min on standard desktop.
-
-⸻
-
-4. 🧰 Instructions for Use
+## 3. 🧰 Instructions for Use
 
 Users are encouraged to use the CLASHub Web Platform to upload their own datasets and perform analysis. The Python backend (including clashub.py) handles:
 	•	CLASH chimeric read processing
 	•	RNA-seq and miRNA-seq normalization
 	•	Differential expression analysis
 	•	Plotting and cumulative distribution analysis
-	•	Integration of ZSWIM8 knockout data across species
 
 The web-based interface dynamically passes uploaded files to the backend for automated processing.
-
-⸻
-
-📈 Reproduction Instructions (Optional)
-
-To reproduce the plots and quantitative results shown in the manuscript:
-	1.	Download the specific datasets used in the study from NCBI SRA PRJNA1166120
-	2.	Format the data according to examples provided on the Analyzer page.
-	3.	Upload to CLASHub or modify clashub.py to run analysis locally by replacing the input paths.
-
-⸻
-
-🔐 License
-
-This project is released under the MIT License.
-
-⸻
-
-🔗 Citation
-
-If you use CLASHub in your research, please cite:
-
-Xie Lab, University of Florida. “CLASHub: an integrated database and analytical platform for microRNA-target interactions.” Nature Communications (in review).
-
-⸻
-
-📂 Repository
-
-All source code:
-🔗 https://github.com/UF-Xie-Lab/CLASHub
-
-Demo data available at:
-🔗 https://clashub.rc.ufl.edu/Analyzer.html
 
 
