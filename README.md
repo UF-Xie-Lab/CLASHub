@@ -43,7 +43,7 @@ Run Instructions
 clashub.py is not meant to be run directly by users. It powers the backend of the CLASHub web platform.
 
 
-## 3. 🧰 Instructions for Use
+## 3. Instructions for Use
 
 Users are encouraged to use the CLASHub Web Platform to upload their own datasets and perform analysis. The Python backend (including `clashub.py`) handles:
 
