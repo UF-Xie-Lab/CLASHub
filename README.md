@@ -5,15 +5,14 @@ CLASHub is an integrated platform that combines a curated database of CLASH-deri
 
 ## 📦 Required Content Summary
 
-- ✅ **Source code**: All core scripts, including `clashub.py`, are available in this repository.
-- ✅ **Demo dataset**: Example CLASH, RNA-seq, and miRNA-seq data are available at [https://clashub.rc.ufl.edu/Analyzer.html](https://clashub.rc.ufl.edu/Analyzer.html).
-- ✅ **README file**: This document contains full system requirements, install instructions, demo guidance, and usage notes.
+- **Source code**: All core scripts, including `clashub.py`, are available in this repository.
+- **Demo dataset**: Example CLASH, RNA-seq, and miRNA-seq data are available at [https://clashub.rc.ufl.edu/Analyzer.html](https://clashub.rc.ufl.edu/Analyzer.html).
 
 ---
 
 ## 1. 🖥️ System Requirements
 
-- **Operating System**: Linux (Ubuntu 20.04+), macOS, or Windows Subsystem for Linux (WSL)
+- **Operating System**: macOS, or Windows Subsystem
 - **Python version**: Python 3.12
 - **Memory**: ≥ 8 GB RAM recommended
 
