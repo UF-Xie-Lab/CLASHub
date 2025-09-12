@@ -3,14 +3,14 @@
 CLASHub is an integrated platform that combines a curated database of CLASH-derived miRNA–target interactions with powerful tools for analyzing CLASH, miRNA-seq, and RNA-seq datasets. [https://clashub.rc.ufl.edu](https://clashub.rc.ufl.edu).
 ---
 
-## 📦 Required Content Summary
+## Required Content Summary
 
 - **Source code**: All core scripts, including `clashub.py`, are available in this repository.
 - **Demo dataset**: Example CLASH, RNA-seq, and miRNA-seq data are available at [https://clashub.rc.ufl.edu/Analyzer.html](https://clashub.rc.ufl.edu/Analyzer.html).
 
 ---
 
-## 1. 🖥️ System Requirements
+## 1. System Requirements
 
 - **Operating System**: macOS, or Windows Subsystem
 - **Python version**: Python 3.12
@@ -31,7 +31,7 @@ These are all part of Python’s standard library.
 
 ⸻
 
-2. ⚙️ Installation Guide
+2. ⚙Installation Guide
 	1.	Clone this repository:
 
 git clone https://github.com/UF-Xie-Lab/CLASHub.git
@@ -50,7 +50,7 @@ Typical install time: ~2 minutes on a standard desktop computer with internet.
 
 ⸻
 
-3. 🧪 Demo
+3. Demo
 
 📁 Input Data
 	•	Visit https://clashub.rc.ufl.edu/Analyzer.html
