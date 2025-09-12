@@ -1,4 +1,4 @@
-# CLASHub: An Integrated Platform for miRNA–Target Interaction Analysis
+# CLASHub: an integrated database and analytical platform for microRNA-target interactions
 
 CLASHub is a comprehensive platform for the integration, visualization, and analysis of CLASH data, RNA-seq, and miRNA-seq datasets.  
 The software supports analyses such as cumulative fraction curves, differential expression, and miRNA–target interaction mapping.
