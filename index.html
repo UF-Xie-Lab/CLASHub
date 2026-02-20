@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASHub 1.0.0</title>
+    <link rel="icon" href="Index_php/CLASH_favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index_home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="Index_php/index.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Index_php/CLASHub_logo.png" alt="CLASH Logo" style="max-width: 600px; height: auto;">
+        </a>
+    </header>
+    <nav class="horizontal-menu">
+        <ul>
+            <li><a class="current" href="index.html">Database</a></li>
+            <li><a href="Analyzer.html">Analyzer</a></li>
+        </ul>
+    </nav>
+ 
+    <main>
+        <div class="index_container"></div>
+            <div class="main-content" id="mainContent">
+                <div class="search-container">
+                    <h1 class="search-title">Search CLASH, Gene Expression, or microRNA Expression</h1>
+                    
+                    <section>
+                        <label class="step-label">Step 1: Select Data Type:</label>
+                        <select id="data_type" name="data_type" class="uniform-width" required>
+                            <option value="">-- Select --</option>
+                            <option value="CLASH">CLASH</option>
+                            <option value="RNA-seq">Gene Expression</option>
+                            <option value="miRNA-seq">microRNA Expression</option>
+                        </select>
+                    </section>
+                    
+                    <section>
+                        <label for="species" class="step-label">Step 2: Select Species:</label>
+                        <select id="species" name="species" class="uniform-width" required>
+                            <option value="">-- Select --</option>
+                            <option value="Human">Human</option>
+                            <option value="Mouse">Mouse</option>
+                            <option value="D.melanogaster">Drosophila</option>
+                            <option value="C.elegans">C.elegans</option>
+                        </select>
+                    </section>
+                
+                    <form id="index_searchForm" action="microRNA_targets.html" method="GET">
+                        <section id="clash_step3">
+                            <label for="CLASH_CellLine" class="step-label">Step 3: Select cell line or tissue:</label>
+                            <select id="CLASH_CellLine" name="CLASH_CellLine" class="uniform-width" required></select>
+                        </section>
+
+                        <input type="hidden" id="CLASH_CellLine_text" name="CLASH_CellLine_text" value="">
+                
+                        <input type="hidden" id="clash_species_hidden" name="clash_species_hidden">
+                
+                        <section id="clash_step4" class="step4-section">
+                            <label for="index_CLASH_name" class="step-label">Step 4: Enter microRNA or target name or gene ID:</label>
+                            <input type="text" id="index_CLASH_name" name="index_CLASH_name" class="uniform-width" required>
+                        </section>
+                
+                        <button id="clash_search_button" type="submit">Search</button>
+                    </form>
+
+                    <form id="TargetAbundance_GeneSearchForm" action="target_abundance.html" method="GET">
+                        <section id="rna_seq_step3">
+                            <label for="TargetAbundance_GeneName" class="step-label">Step 3: Enter gene ID or name:</label>
+                            <input type="text" id="TargetAbundance_GeneName" name="TargetAbundance_GeneName" class="uniform-width" required>
+                        </section>
+
+                        <input type="hidden" id="gene_species_hidden" name="gene_species_hidden">
+
+                        <button id="rna_seq_search_button" type="submit">Search</button>
+                    </form>
+
+                    <form id="mirnaAbundance_searchForm" action="microRNA_abundance.html" method="GET">
+                        <section id="mirna_seq_step3">
+                            <label for="mirnaAbundance_name" class="step-label">Step 3: Enter miRNA name:</label>
+                            <input type="text" id="mirnaAbundance_name" name="mirnaAbundance_name" class="uniform-width" required>
+                        </section>
+
+                        <input type="hidden" id="mirna_species_hidden" name="mirna_species_hidden">
+
+                        <button id="mirna_seq_search_button" type="submit">Search</button>
+                    </form>
+                </div>
+ 
+                <div class="image-container">
+                    <img src="image/CLASH_intro2.png" alt="CLASH Introduction" class="clash-intro-image">
+                </div>
+            </div>
+
+        <section class="intro description-section" id="introSection">
+            <p>
+                <strong><span class="highlight">CLASHub 1.0</span></strong> is a comprehensive and user-friendly platform for exploring microRNA-target interactions. It hosts <strong>CLASH</strong> (Crosslinking, Ligation, and Sequencing of Hybrids—a method to directly identify miRNA-target interactions bound to AGO proteins) data from <strong>25 distinct cell lines or tissues</strong> across four model organisms (<span class="species">Human</span>, <span class="species">Mouse</span>, <span class="species"><em>Drosophila</em></span>, and <span class="species"><em>C. elegans</em></span>), comprising over <strong>166 data</strong>. The database includes <strong>58</strong> published and <strong><span style="color:#0066cc;">91 newly generated CLASH data</span></strong>, including <strong><span style="color:#cc0000;">15 cell lines or tissues not previously reported</span></strong>. Among them are <strong>50 ZSWIM8 knockout data</strong>—providing valuable insights into <strong>target-directed microRNA degradation (TDMD)</strong>.
+            </p>
+
+            <p>
+                CLASHub also offers extensive expression profiling: <strong> 245 RNA-seq data</strong> from <strong>44 cell lines or tissues</strong>, and <strong>157 miRNA-seq data</strong> across <strong>25 cell types</strong>. These datasets enable integrated analyses of miRNA-target regulation across diverse biological contexts.
+            </p>
+
+            <p>
+                Beyond serving as a database, CLASHub features a powerful <a href="Analyzer.html" class="link highlight">Analyzer</a> tool for <strong>simple, fast, and in-depth analyses</strong>—including <span class="services-highlight">CLASH data processing</span>, <span class="services-highlight">miRNA-seq analysis</span>, <span class="services-highlight">RNA-seq analysis</span>, and <span class="services-highlight">cumulative fraction curve generation</span>. These tools support precise identification of miRNA binding sites and quantitative analysis of miRNA impact on gene expression.
+            </p>
+
+            <p>
+                Using CLASHub, we identified <strong><em>ATP6V1G1</em></strong> as a novel trigger for <strong>miR-335</strong> degradation, a TDMD-sensitive miRNA, validated in both human and mouse cells. Furthermore, we experimentally validated canonical targets for <strong>miR-18a-5p</strong> (including <em>ATXN1L</em>, <em>FAM3C</em>, <em>NEDD4</em>, <em>PDE4D</em>, <em>RNF4</em>, <em>ZBTB4</em>, and <em>ZNF367</em>), confirming the platform's reliability in identifying functional miRNA-mRNA repressive interactions.
+            </p>
+
+            <p>
+                By integrating high-quality data with robust analytical tools, CLASHub facilitates comparative studies across multiple organisms, advancing the understanding of miRNA-mediated gene regulation in <span class="highlight">health and disease</span>.
+            </p>
+
+            <div class="help-section">
+                <p class="help-title">Help & Tutorials</p>
+                <ul class="help-list">
+                    <li>
+                        <a href="more_info/Tutorial_Database/tutorial_database.html" target="_blank">Tutorial: Database</a>
+                    </li>
+                    <li>
+                        <a href="more_info/Tutorial_Analyzer/tutorial_analyzer.html" target="_blank">Tutorial: Analyzer</a>
+                    </li>
+                    <li>
+                        <a href="more_info/bulk_download.html">Bulk Data Download</a>
+                    </li>
+                    <li>
+                        <a href="more_info/more_info.html" target="_blank">Frequently Asked Questions (FAQs)</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 40px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+                <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                    <strong>If you use <span style="color:#0066cc;">CLASHub</span> in your research, please cite:</strong>
+                </p>
+                <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 10px;">
+                    Lu Li, Peike Sheng, Nicholas M. Hiers, Tianqi Li, Acadia L Grimme, Yuzhi Wang, Conner M. Traugot, Mingyi Xie
+                    <em><strong>CLASHub: an integrated database and analytical platform for microRNA-target interactions.</strong></em>  
+                    <span style="font-style: italic;">bioRxiv</span>, 2025.  
+                    <a href="https://doi.org/10.1101/2025.08.05.668543" target="_blank" style="color:#0066cc;">
+                        https://doi.org/10.1101/2025.08.05.668543
+                    </a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="copyright-year">2025</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script src="Index_php/track.js"></script>
+</body>
+</html>

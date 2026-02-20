@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASHub 1.0 - Analyzer</title>
+    
+    <link rel="icon" href="Index_php/CLASH_favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/analyzer.css">
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head> 
+
+<body class="analyzer">
+    <header>
+        <a href="index.html">
+            <img src="Index_php/CLASHub_logo.png" alt="CLASH Logo" style="max-width: 600px; height: auto;">
+        </a>
+    </header>
+
+    <nav class="horizontal-menu">
+        <ul>
+            <li><a href="index.html">Database</a></li>
+            <li><a class="current" href="Analyzer.html">Analyzer</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="sidebar-wrapper">
+            <div id="leftMenu">
+                <ul>
+                    <li id="menu-clash" data-form="hyb" onclick="switchForm('hyb')">CLASH</li>
+                    <li id="menu-aqseq" data-form="aqseq" onclick="switchForm('aqseq')">miRNA-seq</li>
+                    <li id="menu-RNAseq" data-form="RNAseq" onclick="switchForm('RNAseq')">RNA-seq</li>
+                    <li id="menu-cumulativeCurve" data-form="CumulativeCurve" onclick="switchForm('CumulativeCurve')">Cumulative Fraction Curve</li>
+                    <li id="menu-jobStatus" data-form="jobStatus" onclick="switchForm('jobStatus')">Job Status</li>
+                </ul>
+            </div>
+
+            <div class="help-section">
+                <p class="help-title">Help & Tutorials</p>
+                <ul class="help-list">
+                    <li>
+                        <a href="more_info/Tutorial_Database/tutorial_database.html" target="_blank">Tutorial: Database</a>
+                    </li>
+                    <li>
+                        <a href="more_info/Tutorial_Analyzer/tutorial_analyzer.html" target="_blank">Tutorial: Analyzer</a>
+                    </li>
+                    <li>
+                        <a href="more_info/bulk_download.html">Bulk Data Download</a>
+                    </li>
+                    <li>
+                        <a href="more_info/more_info.html" target="_blank">Frequently Asked Questions (FAQs)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="formAndImageContainer"> 
+            
+            <div id="formSectionContainer">
+                
+                <div id="hyb" class="form-section">
+                    <div id="hyb_formContainer">
+                        <form id="hyb_uploadForm" enctype="multipart/form-data">
+                            <div>
+                                <label>
+                                    <input type="radio" name="hyb_uploadType" value="fastq" checked onchange="hyb_toggleUploadType()">
+                                    Upload <span style="color: red;">Paired-End FASTQ.gz</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="hyb_uploadType" value="fasta" onchange="hyb_toggleUploadType()">
+                                    Upload <span style="color: red;">Cleaned FASTA.gz</span>
+                                </label>
+                            </div>
+
+                            <div id="hyb_fastqUpload">
+                                <section>
+                                    <label for="hyb_fileToUpload_fastq1">Choose <strong>Read 1 (R1)</strong> file (.fastq.gz):</label>
+                                    <input type="file" id="hyb_fileToUpload_fastq1" name="hyb_fileToUpload_fastq1" required accept=".gz">
+                                </section>
+                                <p id="fileNameDisplay_hyb_fastq1"></p>
+                                
+                                <section>
+                                    <label for="hyb_fileToUpload_fastq2">Choose <strong>Read 2 (R2)</strong> file (.fastq.gz):</label>
+                                    <input type="file" id="hyb_fileToUpload_fastq2" name="hyb_fileToUpload_fastq2" required accept=".gz">
+                                </section>
+                                <p id="fileNameDisplay_hyb_fastq2"></p>
+
+                                <section>
+                                    <label for="hyb_fivePrimeAdapter">5' Adapter Sequence<br><span style="font-size: smaller;">(default: GATCGTCGGACTGTAGAACT)</span>:</label>
+                                    <input type="text" id="hyb_fivePrimeAdapter" name="hyb_fivePrimeAdapter" class="uniform-width" placeholder="GATCGTCGGACTGTAGAACT">
+                                </section>
+
+                                <section>
+                                    <label for="hyb_threePrimeAdapter">3' Adapter Sequence <span style="font-size: smaller;">(default: TGGAATTCTCGGGTGCCAAG)</span>:</label>
+                                    <input type="text" id="hyb_threePrimeAdapter" name="hyb_threePrimeAdapter" class="uniform-width" placeholder="TGGAATTCTCGGGTGCCAAG">
+                                </section>
+
+                                <section>
+                                    <label for="hyb_umi5">5' UMI Length (bp):</label>
+                                    <input type="number" id="hyb_umi5" name="hyb_umi5" class="uniform-width" placeholder="0" min="0">
+                                </section>
+
+                                <section>
+                                    <label for="hyb_umi3">3' UMI Length (bp):</label>
+                                    <input type="number" id="hyb_umi3" name="hyb_umi3" class="uniform-width" placeholder="0" min="0">
+                                </section>
+                            </div>
+                    
+                            <div id="hyb_fastaUpload" style="display:none;">
+                                <section>
+                                    <label for="hyb_fileToUpload_fasta">Choose <strong>Cleaned FASTA</strong> file (.fasta.gz):</label>
+                                    <input type="file" id="hyb_fileToUpload_fasta" name="hyb_fileToUpload_fasta" class="uniform-width" required accept=".gz">
+                                </section>
+                                <p id="fileNameDisplay_hyb_fasta"></p>
+                            </div>
+                    
+                            <section>
+                                <label for="hyb_species">Select species for analysis:</label>
+                                <select id="hyb_species" name="hyb_species" class="uniform-width" required>
+                                    <option value="">Select</option>
+                                    <option value="Human">Human</option>
+                                    <option value="Mouse">Mouse</option>
+                                    <option value="Drosophila">Drosophila</option>
+                                    <option value="C.elegans">C.elegans</option>
+                                </select>
+                            </section>
+                    
+                            <section>
+                                <label for="hyb_outputFileName">Output file name (without extension):</label>
+                                <input type="text" id="hyb_outputFileName" name="hyb_outputFileName" class="uniform-width" required placeholder="Sample1">
+                            </section>
+                    
+                            <section>
+                                <label for="hyb_email">Your Email (results will be sent here):</label>
+                                <input type="email" id="hyb_email" name="email" class="uniform-width" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'.">
+                            </section>
+                    
+                            <button type="submit" id="hyb_uploadButton">Submit Request</button>
+                        </form>
+                        
+                        <aside>
+                            <div id="hyb_progressContainer1" style="display: flex; align-items: center; margin-top: 5px;">
+                                <div id="hyb_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;">
+                                    <div id="hyb_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div>
+                                </div>
+                                <p id="hyb_progressText1" style="margin-left: 10px;"></p>
+                            </div>
+                            
+                            <div id="hyb_progressContainer2" style="display: flex; align-items: center; margin-top: 5px;">
+                                <div id="hyb_progressBarContainer2" style="width: 50%; background-color: transparent; border-radius: 10px;">
+                                    <div id="hyb_progressBar2" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div>
+                                </div>
+                                <p id="hyb_progressText2" style="margin-left: 10px;"></p>
+                            </div>
+                        </aside>
+                    </div>
+                    <div id="hyb_resultContainer" style="display: none;"></div>
+                </div>
+                
+                <div id="aqseq" class="form-section">
+                    <div id="aqseq_formContainer">
+                        <form id="aqseq_uploadForm" enctype="multipart/form-data">
+                            <div>
+                                <label>
+                                    <input type="radio" name="aqseq_analysisType" value="aqPairedEndRead" checked onchange="aqseq_toggleAnalysisType()">
+                                    Upload <span style="color: red;">Paired-End FASTQ.gz</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="aqseq_analysisType" value="aqSingleEndRead" onchange="aqseq_toggleAnalysisType()">
+                                    Upload <span style="color: red;">Single-End FASTQ.gz</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="aqseq_analysisType" value="CleanRead" onchange="aqseq_toggleAnalysisType()">
+                                    Upload <span style="color: red;">Cleaned FASTA.gz</span>
+                                </label>
+                            </div>
+                    
+                            <div id="aqseq_PairedEnd" style="display: block;">
+                                <div id="pairedEndSamplesContainer"></div>
+                            </div>
+                            <button type="button" id="addAqseq_PairedEndSampleButton" onclick="addAqseq_PairedEndSample()">Add a sample</button>
+                    
+                            <div id="aqseq_SingleEnd" style="display: none;">
+                                <div id="singleEndSamplesContainer"></div>
+                            </div>
+                            <button type="button" id="addAqseq_SingleEndSampleButton" onclick="addAqseq_SingleEndSample()">Add a sample</button>
+
+                            <div id="aqseq_CleanedFasta" style="display: none;">
+                                <div id="aqseq_CleanedFastaSamplesContainer"></div>
+                            </div>
+                            <button type="button" id="addAqseq_CleanedFastaSampleButton" onclick="addAqseq_CleanedFastaSample()">Add a sample</button>
+
+                            <div id="aqseq_umiSection">
+                                <section>
+                                    <label for="aqseq_umi5">5' UMI Length (bp):</label>
+                                    <input type="number" id="aqseq_umi5" name="aqseq_umi5" class="uniform-width" placeholder="0" min="0">
+                                </section>
+
+                                <section>
+                                    <label for="aqseq_umi3">3' UMI Length (bp):</label>
+                                    <input type="number" id="aqseq_umi3" name="aqseq_umi3" class="uniform-width" placeholder="0" min="0">
+                                </section>
+                            </div>
+
+                            <section> 
+                                <label for="aqseq_species">Select species for analysis:</label> 
+                                <select id="aqseq_species" name="aqseq_species" class="uniform-width" required> 
+                                    <option value="">Select</option> 
+                                    <option value="Human">Human</option> 
+                                    <option value="Mouse">Mouse</option> 
+                                    <option value="Drosophila">Drosophila</option> 
+                                    <option value="C.elegans">C.elegans</option> 
+                                </select> 
+                            </section> 
+                            
+                            <section> 
+                                <label for="aqseq_email">Your Email (results will be sent here):</label> 
+                                <input type="email" id="aqseq_email" name="aqseq_email" class="uniform-width" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'."> 
+                            </section> 
+                            
+                            <button type="submit" id="aqseq_uploadButton">Submit Request</button> 
+                        </form> 
+                        
+                        <div id="aqseqProgressBarsContainer"></div>
+                        
+                        <aside> 
+                            <div style="display: flex; align-items: center; margin-top: 5px;"> 
+                                <div id="aqseq_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;"> 
+                                    <div id="aqseq_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div> 
+                                </div> 
+                                <p id="aqseq_progressText1" style="margin-left: 10px;"></p> 
+                            </div> 
+                            <div style="display: flex; align-items: center; margin-top: 5px;"> 
+                                <div id="aqseq_progressBarContainer2" style="width: 50%; background-color: transparent; border-radius: 10px;"> 
+                                    <div id="aqseq_progressBar2" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div> 
+                                </div> 
+                                <p id="aqseq_progressText2" style="margin-left: 10px;"></p> 
+                            </div> 
+                        </aside>
+                    </div>
+                    <div id="aqseq_resultContainer" style="display:none;"></div>
+                </div>
+                    
+                <div id="RNAseq" class="form-section">
+                    <div id="RNAseq_formContainer">
+                        <form id="RNAseq_uploadForm" enctype="multipart/form-data">
+
+                            <div>
+                                <label>
+                                    <input type="radio" name="RNAseq_analysisType" value="TPM" checked onchange="RNAseq_toggleAnalysisType()">
+                                    Quantify Expression <span style="color: red; font-size: 0.9em;">(Paired-End FASTQ.gz)</span>
+                                </label>
+                                
+                                <label>
+                                    <input type="radio" name="RNAseq_analysisType" value="TPM_DESeq2" onchange="RNAseq_toggleAnalysisType()">
+                                    Differential Expression <span style="color: red; font-size: 0.9em;">(Paired-End FASTQ.gz)</span>
+                                </label>
+                            </div>
+
+                            <div id="DESeq2Groups" style="display:none;">
+                                <div id="controlGroup">
+                                    <h3>Control Group</h3>
+                                    <div id="controlSamples"></div>
+                                    <button type="button" id="addControlSampleButton" onclick="addControlSample()">Add Control Sample</button>
+                                </div>
+
+                                <div id="treatmentGroup">
+                                    <h3>Treatment Group</h3>
+                                    <div id="treatmentSamples"></div>
+                                    <button type="button" id="addTreatmentSampleButton" onclick="addTreatmentSample()">Add Treatment Sample</button>
+                                </div>
+                            </div>
+
+                            <div id="RNAseq_TPM"></div>
+
+                            <button type="button" id="addSampleButton" onclick="addSample()">+</button>
+
+                            <section>
+                                <label for="RNAseq_species">Select species for analysis:</label>
+                                <select id="RNAseq_species" name="RNAseq_species" class="uniform-width" required>
+                                    <option value="">Select</option>
+                                    <option value="Human">Human</option>
+                                    <option value="Mouse">Mouse</option>
+                                    <option value="Drosophila">Drosophila</option>
+                                    <option value="C.elegans">C.elegans</option>
+                                </select>
+                            </section>
+
+                            <section>
+                                <label for="RNAseq_libraryType">Library Type:</label>
+                                <select id="RNAseq_libraryType" name="RNAseq_libraryType" class="uniform-width">
+                                    <option value="unstranded" selected>Unstranded (Default)</option>
+                                    <option value="stranded">Stranded (R2 = Sense)</option>
+                                </select>
+                            </section>
+
+                            <section style="align-items: flex-start;"> 
+                                <label>Analysis Options:</label> 
+                                <div class="eisa-options" style="display: flex; flex-direction: column; gap: 15px;">
+                                    <div style="padding: 5px 0;">
+                                        <strong>✓ Standard Analysis</strong>
+                                        <div class="eisa-desc" style="margin-top: 2px;">
+                                            Includes gene-level quantification (TPM/Counts) using full annotation.
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="radio-label" style="display: flex; align-items: center; cursor: pointer;">
+                                            <input type="checkbox" id="RNAseq_performEISA" name="RNAseq_performEISA" value="yes">
+                                            <span style="margin-left: 8px; font-weight: bold;">
+                                                + Add Exon-Intron Split Analysis
+                                            </span>
+                                        </label>
+
+                                        <div class="eisa-desc" style="margin-left: 24px;">
+                                            (<a href="https://www.nature.com/articles/nbt.3269" target="_blank" style="color: inherit; text-decoration: underline;">Gaidatzis et al., 2015</a>). Compares exonic vs. intronic changes to distinguish transcriptional from post-transcriptional regulation.
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <label for="RNAseq_umi5">5' UMI Length (bp):</label>
+                                <input type="number" id="RNAseq_umi5" name="RNAseq_umi5" class="uniform-width" placeholder="0" min="0">
+                            </section>
+
+                            <section>
+                                <label for="RNAseq_umi3">3' UMI Length (bp):</label>
+                                <input type="number" id="RNAseq_umi3" name="RNAseq_umi3" class="uniform-width" placeholder="0" min="0">
+                            </section>
+
+                            <section>
+                                <label for="RNAseq_email">Your Email (results will be sent here):</label>
+                                <input type="email" id="RNAseq_email" name="email" class="uniform-width" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'.">
+                            </section>
+
+                            <button type="submit" id="RNAseq_uploadButton">Submit Request</button>
+                        </form>
+
+                        <div id="progressBarsContainer"></div>
+
+                        <aside>
+                            <div style="display:flex;align-items:center;margin-top:5px;">
+                                <div id="RNAseq_progressBarContainer1" style="width:50%;background-color:transparent;border-radius:10px;">
+                                    <div id="RNAseq_progressBar1" style="width:0%;height:15px;background-color:#76c7c0;border-radius:10px;"></div>
+                                </div>
+                                <p id="RNAseq_progressText1" style="margin-left:10px;"></p>
+                            </div>
+
+                            <div style="display:flex;align-items:center;margin-top:5px;">
+                                <div id="RNAseq_progressBarContainer2" style="width:50%;background-color:transparent;border-radius:10px;">
+                                    <div id="RNAseq_progressBar2" style="width:0%;height:15px;background-color:#76c7c0;border-radius:10px;"></div>
+                                </div>
+                                <p id="RNAseq_progressText2" style="margin-left:10px;"></p>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div id="RNAseq_resultContainer" style="display:none;"></div>
+                </div>
+                
+                <div id="CumulativeCurve" class="form-section">
+                    <div id="CumulativeCurve_formContainer">
+                        <form id="CumulativeCurveUploadForm" enctype="multipart/form-data">
+                            <section>
+                                <label for="CumulativeCurve_fileToUpload">
+                                    Upload <span style="color: red;">Differential Expression CSV</span><br>
+                                </label>
+                                <div class="custom-file-input">
+                                    <button type="button" id="customButton_CumulativeCurve_file">Select File</button>
+                                    <span id="CumulativeCurve_fileNameDisplay">No file selected</span>
+                                    <input type="file" id="CumulativeCurve_fileToUpload" name="CumulativeCurve_fileToUpload" required accept=".csv" style="display: none;">
+                                </div>
+                            </section>
+                    
+                            <section>
+                                <label for="CumulativeCurve_species">Select species for analysis:</label>
+                                <select id="CumulativeCurve_species" name="species" required class="uniform-width">
+                                    <option value="">Select</option>
+                                    <option value="Human">Human</option>
+                                    <option value="Mouse">Mouse</option>
+                                    <option value="Drosophila">Drosophila</option>
+                                    <option value="C.elegans">C.elegans</option>
+                                </select>
+                            </section>
+
+                            <section>
+                                <label for="CumulativeCurve_mirnaName">miRNA name:</label>
+                                <input type="text" id="CumulativeCurve_mirnaName" name="CumulativeCurve_mirnaName" required placeholder="e.g., hsa-miR-31-5p" class="uniform-width">
+                            </section>
+
+                            <section style="align-items: flex-start;"> 
+                                <label>Analysis Options:</label> 
+                                <div class="cumulative-options" style="display: flex; flex-direction: column; gap: 15px;">
+                                    <div style="padding: 5px 0;">
+                                        <strong>✓ Standard Analysis</strong>
+                                        <div class="option-desc" style="margin-top: 2px; font-size: 0.9em; color: #555; line-height: 1.4;">
+                                            Groups targets into <strong>Conserved</strong> vs. <strong>All</strong>.
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="radio-label" style="display: flex; align-items: center; cursor: pointer;">
+                                            <input type="checkbox" id="CumulativeCurve_performAdvanced" name="CumulativeCurve_performAdvanced" value="yes">
+                                            <span style="margin-left: 8px; font-weight: bold;">
+                                                + Add Stringent Filtering (Context++ Score)
+                                            </span>
+                                        </label>
+
+                                        <div class="option-desc" style="margin-left: 24px; font-size: 0.9em; color: #555; line-height: 1.4;">
+                                            Focuses on <strong>Top 25%</strong> high-efficacy targets (mRNA 3' UTR only).
+                                            Ref: <a href="https://elifesciences.org/articles/05005" target="_blank" style="color: inherit; text-decoration: underline;">Agarwal et al. (2015)</a>.
+                                        </div>
+                                        
+                                        <div id="CumulativeCurve_advancedWarning" style="margin-left: 24px; margin-top:5px; font-size: 0.9em; color: orange; display: none;">
+                                            <strong>⚠ Not Available for <em>C. elegans</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <label for="CumulativeCurve_BaseMean">BaseMean threshold:</label>
+                                <input type="text" id="CumulativeCurve_BaseMean" name="CumulativeCurve_BaseMean" required placeholder="e.g., 100" class="uniform-width">
+                            </section>
+                    
+                            <section>
+                                <label for="CumulativeCurve_outputFileName">Output file name (without extension):</label>
+                                <input type="text" id="CumulativeCurve_outputFileName" name="CumulativeCurve_outputFileName" required placeholder="OutputFile" class="uniform-width">
+                            </section>
+                    
+                            <section>
+                                <label for="CumulativeCurve_email">Your Email (results will be sent here):</label>
+                                <input type="email" id="CumulativeCurve_email" name="CumulativeCurve_email" required placeholder="e.g., user@XXX.edu" pattern=".*@.*" title="Email should contain '@'." class="uniform-width">
+                            </section>
+                    
+                            <section>
+                                <button type="submit" id="CumulativeCurve_uploadButton">Submit Request</button>
+                            </section>
+                        </form>
+                        <aside>
+                            <div id="CumulativeCurve_progressContainer1" style="display: flex; align-items: center; margin-top: 5px;">
+                                <div id="CumulativeCurve_progressBarContainer1" style="width: 50%; background-color: transparent; border-radius: 10px;">
+                                    <div id="CumulativeCurve_progressBar1" style="width: 0%; height: 15px; background-color: #76c7c0; border-radius: 10px;"></div>
+                                </div>
+                                <p id="CumulativeCurve_progressText1" style="margin-left: 10px;"></p>
+                            </div>
+                        </aside>
+                    </div> 
+                    <div id="CumulativeCurve_resultContainer" style="display: none;"></div>
+                </div>
+
+                <div id="jobStatus" class="form-section job-status-panel" style="display:none;">
+                  <div class="job-status-content">
+                    <h2>Job Queue Status</h2>
+                    <div class="status-summary">
+                        <p><strong>Tasks running:</strong> <span id="runningCount">--</span></p>
+                        <p><strong>Tasks in queue:</strong> <span id="queuedCount">--</span></p>
+                    </div>
+                    <section class="job-check">
+                      <label for="jobIdInput">Check Job ID:</label>
+                      <input type="text" id="jobIdInput" placeholder="e.g., Job ID" />
+                      <button type="button" id="jobIdCheck">Check Status</button>
+                    </section>
+                    <div id="jobResult" class="job-result"></div>
+                  </div>
+                </div>
+            </div> 
+            
+            <div id="imageContainer"> 
+                <div id="default_imageContainer" class="image-section" style="display: block;">
+                    <img id="default_image" src="image/Analyzer_info_without_left_menu.png" alt="Overview of Analysis Tools">
+                </div>
+                <div id="hyb_imageContainer" class="image-section" style="display: none;">
+                    <img id="hyb_image" src="image/CLASH_pipeline_fastq.png" alt="CLASH Analysis Pipeline">
+                </div>
+                <div id="aqseq_imageContainer" class="image-section" style="display: none;">
+                    <img id="aqseq_image" src="image/miRNA_pipeline_pairedfastq.png" alt="AQ-seq Analysis Pipeline">
+                </div>
+                <div id="RNAseq_imageContainer" class="image-section" style="display: none;">
+                    <img id="RNAseq_image" src="image/RNAseq_pipeline_TPM.png" alt="RNA-seq TPM Analysis Pipeline">
+                </div>
+                <div id="CumulativeCurve_imageContainer" class="image-section" style="display: none;">
+                    <img id="CumulativeCurve_image" src="image/CumulativeCurve_pipeline.png" alt="Cumulative Fraction Curve Analysis Pipeline">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./javascripts/common_analyzer.js"></script>
+    <script src="./javascripts/hyb.js"></script>
+    <script src="./javascripts/AQseq.js"></script>
+    <script src="./javascripts/RNAseq.js"></script>
+    <script src="./javascripts/Analyzer_main.js"></script>
+    <script src="./javascripts/CumulativeCurve.js"></script>
+
+    <footer>
+        <p>
+            © <span id="copyright-year">2025</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script src="Index_php/track.js"></script>
+
+</body>
+</html>
