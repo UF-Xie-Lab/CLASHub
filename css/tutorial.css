@@ -1,0 +1,131 @@
+/* ===========================
+       CLASHub Tutorial Page
+   =========================== */
+
+.tutorial-page {
+    font-size: 1em;
+    --card-bg: #ffffff;
+    --card-border: #e6e6e6;
+    --muted: #6b7280;
+    --accent: #0066cc;
+}
+
+/* 主容器布局 */
+.tutorial-page .tutorial-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 16px 20px 40px;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+/* TOC */
+.tutorial-page .toc {
+    position: sticky;
+    top: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.tutorial-page .toc h2 {
+    margin: 0 0 10px;
+    font-size: 1.26rem;
+}
+
+.tutorial-page .toc a {
+    text-decoration: none;
+    color: #333;
+}
+
+.tutorial-page .toc a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* 卡片内容 */
+.tutorial-page .tutorial-content {
+    display: grid;
+    gap: 18px;
+}
+
+.tutorial-page .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+
+/* Tutorial 页面覆盖全局 section flex */
+.tutorial-page section.card {
+    display: block !important;
+}
+
+/* Callout 框 */
+.tutorial-page .callout.info {
+    background: #eef6ff;
+    border-left: 4px solid var(--accent);
+    padding: 10px 12px;
+    border-radius: 6px;
+}
+
+/* 按钮 */
+.tutorial-page .btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+}
+
+.tutorial-page .btn.ghost {
+    background: #fff;
+    color: var(--accent);
+}
+
+.tutorial-page .btn.small {
+    padding: 6px 10px;
+}
+
+/* 大图 with caption */
+.tutorial-page .figure-box {
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
+}
+
+.tutorial-page .figure-img {
+    display: block;
+    width: 100%;
+    max-width: 1125px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.tutorial-page .figure-caption {
+    margin-top: 8px;
+    color: #333;
+    line-height: 1.55;
+}
+
+/* Badge */
+.tutorial-page .badge {
+    display: inline-block;
+    min-width: 1.45em;
+    padding: 0.05em 0.4em;
+    border-radius: 999px;
+    background: #cc0000;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 响应式 */
+@media (max-width: 980px) {
+    .tutorial-page .tutorial-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Data Download - CLASHub</title>
+    <link rel="icon" href="../Index_php/CLASH_favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/index_home.css">
+
+    <style>
+        .download-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            min-height: 600px;
+        }
+
+        h1.page-title {
+            color: #333;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        .download-table th, .download-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .download-table th {
+            background-color: #f5f7fa;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .download-table tr:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Button Style */
+        .btn-download {
+            display: inline-block;
+            padding: 6px 15px;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #004c99;
+        }
+
+        .section-header {
+            background-color: #e6f2ff;
+            color: #0055aa;
+            padding: 10px 15px;
+            margin-top: 30px;
+            border-left: 5px solid #0066cc;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <a href="../index.html">
+        <img
+          src="../Index_php/CLASHub_logo.png"
+          alt="CLASH Logo"
+          style="max-width: 600px; height: auto;"
+        />
+      </a>
+      <hr class="gradient-line" />
+    </header>
+ 
+    <main>
+        <div class="download-container">
+            <h1 class="page-title">Bulk Data Download</h1>
+            <p>Below you can download the complete datasets processed by CLASHub. Files are provided in <strong>CSV and/or BW</strong> format.</p>
+
+            <div class="section-header">1. CLASH Data (Interaction Sites)</div>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                * Files labeled <strong>"Expanded"</strong> include additional columns for average miRNA and/or gene expression levels derived from the corresponding RNA-seq/miRNA-seq data.
+                <br>
+                * <strong>BW (BigWig)</strong> files are provided for genome browser visualization (e.g., IGV).
+            </p>
+            <table class="download-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Species</th>
+                        <th style="width: 15%;">Cell Line / Tissue</th>
+                        <th style="width: 30%;">CSV File Name</th>
+                        <th style="width: 7%;">Download</th>
+                        <th style="width: 30%;">BW File Name</th>
+                        <th style="width: 8%;">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Human</td>
+                        <td>501Mel</td>
+                        <td>CLASH_human_501Mel_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_501Mel_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_501Mel.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_501Mel.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>A549</td>
+                        <td>CLASH_human_A549_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_A549_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_A549.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_A549.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>Colorectal Tissue</td>
+                        <td>CLASH_human_Colorectal_tissue.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_Colorectal_tissue.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_Colorectal_tissue.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_Colorectal_tissue.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>D425</td>
+                        <td>CLASH_human_D425_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_D425_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_D425.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_D425.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>ES2</td>
+                        <td>CLASH_human_ES2_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_ES2_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_ES2.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_ES2.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>H1299</td>
+                        <td>CLASH_human_H1299_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_H1299_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_H1299.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_H1299.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>HCT116</td>
+                        <td>CLASH_human_HCT116.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_HCT116.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_HCT116.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_HCT116.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>HEK293T</td>
+                        <td>CLASH_human_HEK293T_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_HEK293T_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_HEK293T.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_HEK293T.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>HepG2</td>
+                        <td>CLASH_human_HepG2_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_HepG2_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_HepG2.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_HepG2.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>MB002</td>
+                        <td>CLASH_human_MB002_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_MB002_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_MB002.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_MB002.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>MDAMB231</td>
+                        <td>CLASH_human_MDAMB231_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_MDAMB231_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_MDAMB231.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_MDAMB231.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>Ovcar8</td>
+                        <td>CLASH_human_Ovcar8_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_Ovcar8_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_Ovcar8.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_Ovcar8.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>T98G</td>
+                        <td>CLASH_human_T98G_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_T98G_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_T98G.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_T98G.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>TIVE</td>
+                        <td>CLASH_human_TIVE.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_TIVE.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_TIVE.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_TIVE.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Human</td>
+                        <td>U87MG</td>
+                        <td>CLASH_human_U87MG_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_U87MG_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_human_U87MG.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_human_U87MG.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Mouse</td>
+                        <td>3T12</td>
+                        <td>CLASH_mouse_3T12.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_3T12.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_3T12.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_3T12.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>Cortex</td>
+                        <td>CLASH_mouse_Cortex.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Cortex.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_Cortex.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Cortex.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>HE2 1B</td>
+                        <td>CLASH_mouse_HE2_1B.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_HE2_1B.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_HE2_1B.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_HE2_1B.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>Heart</td>
+                        <td>CLASH_mouse_Heart_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Heart_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_Heart.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Heart.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>Kidney</td>
+                        <td>CLASH_mouse_Kidney_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Kidney_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_Kidney.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Kidney.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>MEF</td>
+                        <td>CLASH_mouse_MEF_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_MEF_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_MEF.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_MEF.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>Striatal Cell</td>
+                        <td>CLASH_mouse_Striatal_Cell_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Striatal_Cell_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_mouse_Striatal_Cell.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_mouse_Striatal_Cell.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Drosophila</td>
+                        <td>S2</td>
+                        <td>CLASH_Drosophila_S2_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_Drosophila_S2_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_Drosophila_S2.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_Drosophila_S2.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>C. elegans</td>
+                        <td>Embryo</td>
+                        <td>CLASH_Celegans_Embryo_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_Celegans_Embryo_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_Celegans_Embryo.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_Celegans_Embryo.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                    <tr>
+                        <td>C. elegans</td>
+                        <td>L4</td>
+                        <td>CLASH_Celegans_L4_Expanded.csv</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_Celegans_L4_Expanded.csv" class="btn-download" download>CSV</a></td>
+                        <td>CLASH_Celegans_L4.bw</td>
+                        <td><a href="../bluk_download_CSVfile/CLASH_Celegans_L4.bw" class="btn-download" style="background-color: #28a745;" download>BW</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="section-header">2. Gene Abundance (TPM)</div>
+            <table class="download-table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Species</th>
+                        <th style="width: 70%;">CSV File Name</th>
+                        <th style="width: 15%;">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Human</td><td>gene_abundance_Human_TPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/gene_abundance_Human_TPM.csv" class="btn-download" download>CSV</a></td></tr>
+                    <tr><td>Mouse</td><td>gene_abundance_Mouse_TPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/gene_abundance_Mouse_TPM.csv" class="btn-download" download>CSV</a></td></tr>
+                    <tr><td>Drosophila</td><td>gene_abundance_Drosophila_TPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/gene_abundance_Drosophila_TPM.csv" class="btn-download" download>CSV</a></td></tr>
+                    <tr><td>C. elegans</td><td>gene_abundance_Celegans_TPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/gene_abundance_Celegans_TPM.csv" class="btn-download" download>CSV</a></td></tr>
+                </tbody>
+            </table>
+
+            <div class="section-header">3. miRNA Abundance (CPM)</div>
+            <table class="download-table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Species</th>
+                        <th style="width: 70%;">CSV File Name</th>
+                        <th style="width: 15%;">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Human</td><td>miRNA_abundance_Human_CPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/miRNA_abundance_Human_CPM.csv" class="btn-download" download>CSV</a></td></tr>
+                    <tr><td>Mouse</td><td>miRNA_abundance_Mouse_CPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/miRNA_abundance_Mouse_CPM.csv" class="btn-download" download>CSV</a></td></tr>
+                    <tr><td>Drosophila</td><td>miRNA_abundance_Drosophila_CPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/miRNA_abundance_Drosophila_CPM.csv" class="btn-download" download>CSV</a></td></tr>
+                    <tr><td>C. elegans</td><td>miRNA_abundance_Celegans_CPM.csv</td>
+                        <td><a href="../bluk_download_CSVfile/miRNA_abundance_Celegans_CPM.csv" class="btn-download" download>CSV</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="copyright-year">2025</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

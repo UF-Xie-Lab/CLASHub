@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutorial: Analyzer | CLASHub 1.0</title>
+  <link rel="icon" href="../../Index_php/CLASH_favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/tutorial.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="tutorial_analyzer.js" defer></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body class="tutorial-page">
+    <header>
+        <a href="../../index.html" class="logo-link" title="Back to Database">
+            <img src="../../Index_php/CLASHub_logo.png" alt="CLASHub Logo" style="max-width: 600px; height: auto;">
+        </a>
+        <hr class="gradient-line">
+    </header>
+
+    <main class="index_container tutorial-container">
+        <aside class="toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ol>
+                <li><a class="toc-link" href="#overview">Overview</a></li>
+                <li><a class="toc-link" href="#clash-analysis">CLASH analysis</a></li>
+                <li><a class="toc-link" href="#mirnaseq-analysis">miRNA-seq analysis</a></li>
+                <li><a class="toc-link" href="#rnaseq-analysis">RNA-seq analysis</a></li>
+                <li><a class="toc-link" href="#cumulative-analysis">Cumulative fraction curve analysis</a></li>
+                <li><a class="toc-link" href="#job-status">Job status</a></li>
+            </ol>
+        </aside>
+
+        <article class="tutorial-content">
+            <section id="overview" class="card">
+                <h1>CLASHub Analyzer Tutorial</h1>
+                <p>This tutorial covers the five main analysis modules available in the Analyzer: CLASH, miRNA-seq, RNA-seq, cumulative fraction curve generation, and job status monitoring.</p>
+                <figure class="figure-box">
+                    <img src="../../image/Analyzer_info.png" alt="Overview of analysis tools provided by CLASHub" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 1. Overview of analysis tools provided by CLASHub.</strong><br>
+                        Schematic representation of the five main modules available in the CLASHub Analyzer interface, including CLASH (red), miRNA-seq (green), RNA-seq (orange), cumulative fraction curve generation (blue), and job status monitoring (purple). Users can select the desired analysis type from the left menu. Each module specifies compatible input file formats and outlines the corresponding output content.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section id="clash-analysis" class="card">
+                <h2>CLASH analysis</h2>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_clash_fastq.png" alt="CLASH analysis interface and automated processing pipeline in CLASHub" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 2. CLASH analysis interface and automated processing pipeline in CLASHub.</strong><br>
+                        (A) Interface for initiating CLASH analysis. Users <span class="badge">1</span> select the CLASH module, <span class="badge">2</span> select input file type, <span class="badge">3</span> select local sequencing files for upload, <span class="badge">4</span> and <span class="badge">5</span> input adapter sequences, <span class="badge">6</span>-<span class="badge">7</span> define the length of 5′ and 3′ Unique Molecular Identifiers (UMIs), <span class="badge">8</span> select species, <span class="badge">9</span> specify output filename, and <span class="badge">10</span> enter email address, then <span class="badge">11</span> submit the request. The backend bioinformatic pipeline to process paired-end FASTQ data is shown on the right.<br>
+                        (B) Example output report, displaying processed read counts, RNA type summary, and RNA composition chart.
+                    </figcaption>
+                </figure>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_clash_fasta.png" alt="CLASH analysis quality assessment reports and workflow for pre-processed FASTA inputs" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 3. CLASH analysis quality assessment reports and workflow for pre-processed FASTA inputs.</strong><br>
+                        (A) Interface for submitting CLASH analysis with cleaned FASTA files. Users <span class="badge">1</span> select the CLASH module, <span class="badge">2</span> choose “cleaned FASTA.gz” as input file type, <span class="badge">3</span> select a local FASTA file for upload, <span class="badge">4</span> select species, <span class="badge">5</span> specify output filename, <span class="badge">6</span> enter email address, and <span class="badge">7</span> submit the request. The backend bioinformatic pipeline to process cleaned FASTA data is shown on the right.<br>
+                        (B) Genome-level visualization of CLASH-mapped reads. For each submitted FASTA file, CLASHub generates a bigWig (bw) file for inspection in IGV. Shown is an example of miR-7 binding to OIP5-AS1 (Cyrano) in the human hg38 genome.<br>
+                        (C) Example of the comparative quality assessment report generated by the CLASH analysis module. The charts visualize the characteristics of unique miRNA-target hybrids by distinguishing High Confidence Targets from Excluded Background RNAs (e.g., rRNAs, tRNAs, mitochondrial RNAs, and pseudogenes).
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section id="mirnaseq-analysis" class="card">
+                <h2>miRNA-seq analysis</h2>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_miRNA_pipeline_pairedfastq.png" alt="miRNA-seq analysis interface and processing overview" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 4. miRNA-seq analysis interface and processing overview.</strong><br>
+                        (A) Interface for miRNA-seq analysis. Users <span class="badge">1</span> select the module, <span class="badge">2</span> choose input file type, <span class="badge">3</span> select paired-end FASTQ files to upload, <span class="badge">4</span>-<span class="badge">5</span> enter adapter sequences, <span class="badge">6</span> specify output filename, <span class="badge">7</span> can optionally add additional samples, <span class="badge">8</span>-<span class="badge">9</span> define the length of 5′ and 3′ Unique Molecular Identifiers (UMIs), <span class="badge">10</span> select species, <span class="badge">11</span> provide email address, and <span class="badge">12</span> submit the request. The backend bioinformatic pipeline to process paired-end FASTQ data is shown on the right.<br>
+                        (B) Output summary and a bar chart displaying statistics of the processed reads.
+                    </figcaption>
+                </figure>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_miRNA_pipeline_singlefastqfasta.png" alt="miRNA-seq analysis workflows for single-end FASTQ and cleaned FASTA inputs" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 5. miRNA-seq analysis workflows for single-end FASTQ and cleaned FASTA inputs.</strong><br>
+                        (A) Interface for processing single-end FASTQ files. Users <span class="badge">1</span> select the miRNA-seq module, <span class="badge">2</span> choose the “Single-End FASTQ” input, <span class="badge">3</span> choose a local file to upload, <span class="badge">4</span> enter the adapter sequence, <span class="badge">5</span> specify the output filename, <span class="badge">6</span> can optionally add additional samples, <span class="badge">7</span>-<span class="badge">8</span> define the length of 5′ and 3′ Unique Molecular Identifiers (UMIs), <span class="badge">9</span> select the species, <span class="badge">10</span> provide an email address, and <span class="badge">11</span> submit the request.<br>
+                        (B) Interface for processing cleaned FASTA files. Users <span class="badge">1</span> select the miRNA-seq module, <span class="badge">2</span> choose the “Cleaned FASTA” input, <span class="badge">3</span> choose a local file to upload, <span class="badge">4</span> specify the output filename, <span class="badge">5</span> can optionally add additional samples, <span class="badge">6</span> select the species, <span class="badge">7</span> provide an email address, and <span class="badge">8</span> submit.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section id="rnaseq-analysis" class="card">
+                <h2>RNA-seq analysis</h2>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_RNAseq_pipeline_TPM.png" alt="RNA-seq analysis module interface and processing summary" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 6. RNA-seq analysis module interface and processing summary.</strong><br>
+                        (A) Interface for RNA-seq gene expression quantification. Users <span class="badge">1</span> select the RNA-seq module, <span class="badge">2</span> choose paired-end FASTQ input, <span class="badge">3</span> upload Read 1 and Read 2 files, <span class="badge">4</span>-<span class="badge">5</span> enter adapter sequences, <span class="badge">6</span> specify output filename, <span class="badge">7</span> add more samples if needed, <span class="badge">8</span> select species, <span class="badge">9</span> specify the library type (unstranded or stranded), <span class="badge">10</span> configure analysis options (standard analysis is performed by default, with an option to add Exon-Intron Split Analysis), <span class="badge">11</span>-<span class="badge">12</span> define the length of 5′ and 3′ Unique Molecular Identifiers (UMIs), <span class="badge">13</span> provide an email address, and <span class="badge">14</span> submit the request. The backend bioinformatic pipeline to process paired-end FASTQ data is shown on the right.<br>
+                        (B) Example processing output showing adapter sequences, read counts across each step, and a bar chart summarizing total, trimmed, and aligned reads.
+                    </figcaption>
+                </figure>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_RNAseq_pipeline_Deseq2.png" alt="RNA-seq differential expression analysis module interface and workflow" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 7. RNA-seq differential expression analysis module interface and workflow.</strong><br>
+                        Interface for differential gene expression analysis. Users <span class="badge">1</span> select the RNA-seq module, <span class="badge">2</span> choose the differential expression option, <span class="badge">3</span>-<span class="badge">10</span> upload at least two control group paired-end FASTQ files with the option to add additional samples <span class="badge">11</span>, <span class="badge">12</span>–<span class="badge">20</span> upload two or more treatment group files, specify adapter sequences and output filenames, <span class="badge">21</span> select species, <span class="badge">22</span> specify the library type (unstranded or stranded), <span class="badge">23</span> configure analysis options (standard differential expression is performed by default, with an option to add Exon-Intron Split Analysis), <span class="badge">24</span>-<span class="badge">25</span> define the length of 5′ and 3′ Unique Molecular Identifiers (UMIs), <span class="badge">26</span> provide an email address, and <span class="badge">27</span> submit the request. The backend pipeline that performs adapter trimming, genome mapping, count generation, and differential expression analysis is shown on the right.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section id="cumulative-analysis" class="card">
+                <h2>Cumulative fraction curve analysis</h2>
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_analyzer_CumulativeCurve_pipeline.png" alt="Cumulative fraction curve analysis module" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 8. Cumulative fraction curve analysis module.</strong><br>
+                        (A) Interface for generating cumulative fraction curves. Users <span class="badge">1</span> select the module, <span class="badge">2</span> upload a differential gene expression CSV file, <span class="badge">3</span> specify species, <span class="badge">4</span> enter miRNA name, <span class="badge">5</span> select analysis options (Standard Analysis and/or Stringent Filtering), <span class="badge">6</span> define optional miRNA count BaseMean threshold, <span class="badge">7</span> specify output filename, <span class="badge">8</span> provide email, and <span class="badge">9</span> submit the request. The backend bioinformatic pipeline to generate the plot is shown on the right.<br>
+                        (B) Example output of the Standard Analysis showing cumulative fraction curves for dme-miR-999-3p target classified by conservation status (Conserved vs. All) from CLASH and TargetScan datasets.<br>
+                        (C) Example output of the Stringent Filtering analysis for the same miRNA, displaying cumulative fraction curves for the top 25% of high-efficacy targets based on TargetScan Context++ scores and high-confidence overlaps with CLASH data. For both (B) and (C), Mann–Whitney U test P-values indicate the significance of expression shifts in target sets compared to non-targets.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section id="job-status" class="card">
+                <h2>Job status</h2>
+                <p>The Job Status module allows users to monitor current job counts and query specific job statuses using a unique Job ID, enabling convenient verification of whether a job has completed, is in progress, or remains pending in the queue.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="copyright-year">2026</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script src="../../Index_php/track.js"></script>
+</body>
+</html>

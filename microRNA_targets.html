@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASHub CLASH</title>
+    <link rel="icon" href="Index_php/CLASH_favicon.png" type="image/png">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/microRNA_target.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./javascripts/microRNA_targets.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Index_php/CLASHub_logo.png" alt="CLASH Logo" style="max-width: 600px; height: auto;">
+        </a>
+        <hr class="gradient-line">
+        <h1 id="clash-header">CLASH</h1>
+    </header>
+
+    <main>
+        <div class="flex-container">
+            
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="filterRegion">Filter by Region:</label>
+                    <select id="filterRegion">
+                        <option value="all">All Regions</option>
+                        <option value="3' UTR">3' UTR</option>
+                        <option value="CDS">CDS</option>
+                        <option value="5' UTR">5' UTR</option>
+                        <option value="intron">Intron</option>
+                        <option value="non-coding">Non-coding / Others</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterSiteType">Filter by Site Type:</label>
+                    <select id="filterSiteType">
+                        <option value="all">All Site Types</option>
+                        </select>
+                </div>
+                
+                <button id="downloadTable">Download Table</button>
+            </div>
+
+            <section class="table-container" id="dataContainer">
+                </section>
+            
+            <div class="pagination">
+                </div>
+            
+            </div>
+    </main>
+     
+    <footer>
+        <p>
+            © <span id="copyright-year">2025</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script src="Index_php/track.js"></script>
+</body>
+</html>

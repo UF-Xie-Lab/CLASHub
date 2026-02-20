@@ -1,0 +1,156 @@
+/* ===========================
+       CLASHub More Info Page
+   =========================== */
+
+/* FAQ 列表 */
+.more-info-page .faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.more-info-page .faq-list li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* FAQ 问题按钮 */
+.more-info-page .faq-question {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    color: #007BFF;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.more-info-page .faq-question:hover {
+    background-color: #e6f7ff;
+}
+
+/* FAQ 答案 */
+.more-info-page .faq-answer {
+    display: block;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+/* 页面布局 */
+.more-info-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.more-info-page main > * {
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* 标题间距缩小 */
+.more-info-page h4 {
+    margin-bottom: 5px;
+}
+
+/* FAQ 子项垂直布局 */
+.more-info-page .faq {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 局部重置 section */
+.more-info-page section,
+.more-info-page .faq h3,
+.more-info-page .faq p {
+    display: block;
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+/* 表格样式 */
+.more-info-page .dataset-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.more-info-page .dataset-table th,
+.more-info-page .dataset-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 150px;
+}
+
+.more-info-page .dataset-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* 列宽 */
+.more-info-page .dataset-table th:nth-child(1),
+.more-info-page .dataset-table td:nth-child(1) {
+    width: 15%;
+}
+
+.more-info-page .dataset-table th:nth-child(2),
+.more-info-page .dataset-table td:nth-child(2),
+.more-info-page .dataset-table th:nth-child(3),
+.more-info-page .dataset-table td:nth-child(3),
+.more-info-page .dataset-table th:nth-child(4),
+.more-info-page .dataset-table td:nth-child(4) {
+    width: 10%;
+}
+
+.more-info-page .dataset-table th:nth-child(5),
+.more-info-page .dataset-table td:nth-child(5) {
+    width: 15%;
+}
+
+.more-info-page .dataset-table th:nth-child(6),
+.more-info-page .dataset-table td:nth-child(6) {
+    width: 30%;
+}
+
+.more-info-page .dataset-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.more-info-page .dataset-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.thank-you-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.thank-you-container .button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+.thank-you-container .button:hover {
+    background-color: #0056b3;
+}

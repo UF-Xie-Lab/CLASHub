@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help - CLASHub 1.0</title>
+    <link rel="icon" href="../Index_php/CLASH_favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../../css/tutorial.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="more_info.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body class="tutorial-page more-info-page">
+    <header>
+      <a href="../index.html">
+        <img
+          src="../Index_php/CLASHub_logo.png"
+          alt="CLASH Logo"
+          style="max-width: 600px; height: auto;"
+        />
+      </a>
+      <hr class="gradient-line" />
+    </header>
+
+    <main class="index_container tutorial-container">
+        <!-- Left TOC -->
+        <aside class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li>
+            <a class="toc-link" href="#faq-1"
+              >What CLASH data is currently available?</a
+            >
+          </li>
+          <li>
+            <a class="toc-link" href="#faq-2"
+              >What Gene Expression Profile data is available?</a
+            >
+          </li>
+          <li>
+            <a class="toc-link" href="#faq-3"
+              >What miRNA Expression Profile data is available?</a
+            >
+          </li>
+          <li>
+            <a class="toc-link" href="#faq-4">How is CLASH data analyzed?</a>
+          </li>
+          <li>
+            <a class="toc-link" href="#faq-5">How is miRNA AQ-seq analyzed?</a>
+          </li>
+          <li>
+            <a class="toc-link" href="#faq-6">How is RNA-seq data analyzed?</a>
+          </li>
+          <li>
+            <a class="toc-link" href="#faq-7"
+              >How is cumulative fraction curve analysis analyzed</a
+            >
+          </li>
+        </ol>
+        </aside>
+
+        <!-- FAQ content -->
+        <article class="tutorial-content">
+            <section id="faq-1" class="card">
+                <h2>1. What CLASH data is currently available in CLASHub?</h2>
+                    <div class="faq-answer">
+                    <p>
+                        CLASHub hosts data from four species:
+                        <strong>Human, Mouse, Drosophila melanogaster</strong>, and
+                        <strong>Caenorhabditis elegans</strong>. Below is the summary of
+                        available datasets:
+                    </p>
+
+                    <h4>Human</h4>
+                    <table class="dataset-table">
+                        <thead>
+                        <tr>
+                            <th>Sample Name</th>
+                            <th>wild type (#)</th>
+                            <th>Non-targeting sgRNA Control (#)</th>
+                            <th>ZSWIM8 Knockout (#)</th>
+                            <th>BioProject Number</th>
+                            <th>SRR Number</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>A549</td>
+                            <td>—</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34738798, SRR34738799, SRR34738800, SRR34738801,
+                            SRR34738802, SRR34738803, SRR34738804, SRR34738805,
+                            SRR34738790, SRR34738791, SRR34738792, SRR34738793
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Colorectal tissue</td>
+                            <td>2</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>SRR37216684, SRR37216685</td>
+                        </tr>
+                        <tr>
+                            <td>D425</td>
+                            <td>3</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>SRR34757946, SRR34757949, SRR34757950</td>
+                        </tr>
+                        <tr>
+                            <td>ES2</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34757940, SRR34757941, SRR34757942, SRR34757943,
+                            SRR34757944, SRR34757945
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HCT116</td>
+                            <td>5</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE164634"
+                                target="_blank"
+                                >GSE164634</a
+                            >,
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov//bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR13415087, SRR13415088, SRR13415089, SRR13415090,
+                            SRR13415091, SRR34757939, SRR34757947, SRR34757948
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HEK293T</td>
+                            <td>8</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE198250"
+                                target="_blank"
+                                >GSE198250</a
+                            >,
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov//bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR18281055, SRR18281057, SRR18281067, SRR18281068,
+                            SRR34761041, SRR34761042, SRR34761043, SRR34761044
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HepG2</td>
+                            <td>3</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>SRR34783077, SRR34783079, SRR34783080</td>
+                        </tr>
+                        <tr>
+                            <td>H1299</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34768260, SRR34768261, SRR34768262, SRR34768263,
+                            SRR34768274, SRR34768275
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MB002</td>
+                            <td>—</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34783070, SRR34783071, SRR34783072, SRR34783073,
+                            SRR34783074, SRR34783075, SRR34783076, SRR34783078
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MDA-MB-231</td>
+                            <td>—</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR30817646, SRR30817647, SRR30817648, SRR30817649,
+                            SRR30817650, SRR30817651, SRR34738794, SRR34738795,
+                            SRR34738796, SRR34738797, SRR34738806, SRR34738807
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>OVCAR8</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34768264, SRR34768265, SRR34768266, SRR34768267,
+                            SRR34768276, SRR34768277
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TIVE-EX-LTC</td>
+                            <td>3</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE101978"
+                                target="_blank"
+                                >GSE101978</a
+                            >
+                            </td>
+                            <td>SRR5876947, SRR5876948, SRR5876949</td>
+                        </tr>
+                        <tr>
+                            <td>T98G</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34743309, SRR34743310, SRR34743311, SRR34743312,
+                            SRR34743317, SRR34743318
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>U87MG</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34743313, SRR34743314, SRR34743315, SRR34743316,
+                            SRR34743319, SRR34743320
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>501Mel</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34768268, SRR34768269, SRR34768270, SRR34768271,
+                            SRR34768272, SRR34768273
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Mouse</h4>
+                    <table class="dataset-table">
+                        <thead>
+                        <tr>
+                            <th>Sample Name</th>
+                            <th>wild type (#)</th>
+                            <th>Non-targeting sgRNA Control (#)</th>
+                            <th>Zswim8 Knockout (#)</th>
+                            <th>BioProject Number</th>
+                            <th>SRR Number</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>HE2.1B</td>
+                            <td>6</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124687"
+                                target="_blank"
+                                >GSE124687</a
+                            >
+                            </td>
+                            <td>
+                            SRR8395242, SRR8395243, SRR8395244, SRR8395245, SRR8395246,
+                            SRR8395247
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MEF</td>
+                            <td>—</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>
+                            SRR34793109, SRR34793110, SRR34793111, SRR34793112
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Striatal cell</td>
+                            <td>—</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1093144"
+                                target="_blank"
+                                >PRJNA1093144</a
+                            >
+                            </td>
+                            <td>
+                            SRR28497185, SRR28497186, SRR28497189, SRR28497190,
+                            SRR2849718, 6SRR28497197, SRR28497198, SRR28497199,
+                            SRR28497200
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3T12</td>
+                            <td>3</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124687"
+                                target="_blank"
+                                >GSE124687</a
+                            >
+                            </td>
+                            <td>SRR8395248, SRR8395249, SRR8395250</td>
+                        </tr>
+                        <tr>
+                            <td>Cortex tissue</td>
+                            <td>8</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73058"
+                                target="_blank"
+                                >GSE73058</a
+                            >
+                            </td>
+                            <td>
+                            SRR2413277, SRR2413278, SRR2413282, SRR2413289, 
+                            SRR2413290, SRR2413300, SRR2413301, SRR2413302
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Heart tissue</td>
+                            <td>2</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>SRR34793107, SRR34793108</td>
+                        </tr>
+                        <tr>
+                            <td>Kidney tissue</td>
+                            <td>2</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1166120"
+                                target="_blank"
+                                >PRJNA1166120</a
+                            >
+                            </td>
+                            <td>SRR34793105, SRR34793106</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Drosophila melanogaster</h4>
+                    <table class="dataset-table">
+                        <thead>
+                        <tr>
+                            <th>Sample Name</th>
+                            <th>wild type (#)</th>
+                            <th>Non-targeting sgRNA Control (#)</th>
+                            <th>Dora Knockout (#)</th>
+                            <th>BioProject Number</th>
+                            <th>SRR Number</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>S2 cells</td>
+                            <td>—</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA896239"
+                                target="_blank"
+                                >PRJNA896239</a
+                            >
+                            </td>
+                            <td>
+                            SRR22129325, SRR22129327, SRR22129328, SRR22129284,
+                            SRR22129287, SRR22129298
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Caenorhabditis elegans</h4>
+                    <table class="dataset-table">
+                        <thead>
+                        <tr>
+                            <th>Sample Name</th>
+                            <th>wild type (#)</th>
+                            <th>Non-targeting sgRNA Control (#)</th>
+                            <th>Ebax Knockout (#)</th>
+                            <th>BioProject Number</th>
+                            <th>SRR Number</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Embryo</td>
+                            <td>—</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303817"
+                                target="_blank"
+                                >GSE303817</a
+                            >
+                            </td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>mid-L4 stage</td>
+                            <td>—</td>
+                            <td>4</td>
+                            <td>—</td>
+                            <td>
+                            <a
+                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA328816"
+                                target="_blank"
+                                >PRJNA328816</a
+                            >
+                            </td>
+                            <td>SRR3882724, SRR3882949, SRR3882950, SRR3882951</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+            </section>
+
+            <section id="faq-2" class="card">
+                <h2>2. What Gene Expression Profile data is available in CLASHub?</h2>
+                    <div class="faq-answer">
+                            <p>
+                                Gene Expression Profile from four species: <strong>Human, Mouse, Drosophila melanogaster</strong>, and <strong>Caenorhabditis elegans</strong>. Below is the summary of available datasets:
+                            </p>
+                            <h4>Human</h4>
+                            <table class="dataset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sample Name</th>
+                                        <th>wild type (#)</th>
+                                        <th>Non-targeting sgRNA Control (#)</th>
+                                        <th>ZSWIM8 Knockout (#)</th>
+                                        <th>BioProject Number</th>
+                                        <th>SRR Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>A549</td><td>7</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE263036" target="_blank">GSE263036</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212057" target="_blank">GSE212057</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199309" target="_blank">GSE199309</a>
+                                        </td><td>SRR28535493, SRR28535494, SRR28535495, SRR21237863, SRR21237869, SRR21237879, SRR18462418</td></tr>
+                                    <tr><td>D425</td><td>5</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE151810" target="_blank">GSE151810</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE185024" target="_blank">GSE185024</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123760" target="_blank">GSE123760</a>
+                                        </td><td>SRR11924485, SRR11924486, SRR16119415, SRR16119416, SRR8315029</td></tr>
+                                    <tr><td>ES2</td><td>6</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218794" target="_blank">GSE218794</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE245778" target="_blank">GSE245778</a>
+                                        </td><td>SRR22410790, SRR22410791, SRR22410792, SRR26439462, SRR26439463, SRR26439464</td></tr>
+                                    <tr><td>HEK293T</td><td>7</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231583" target="_blank">GSE231583</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196043" target="_blank">GSE196043</a>
+                                        </td><td>SRR24421974, SRR24421975, SRR24421976, SRR18074813, SRR18074814, SRR18074815, SRR18074816</td></tr>
+                                    <tr><td>Hela</td><td>7</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE273634" target="_blank">GSE273634</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218727" target="_blank">GSE218727</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199309" target="_blank">GSE199309</a>
+                                        </td><td>SRR30058518, SRR30058519, SRR30058520, SRR22407570, SRR22407571, SRR22407572, SRR18462415</td></tr>
+                                    <tr><td>HepG2</td><td>5</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224980" target="_blank">GSE224980</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264010" target="_blank">GSE264010</a>
+                                        </td><td>SRR28685775, SRR28685776, SRR28685777, SRR23387178, SRR23387179</td></tr>
+                                    <tr><td>H1299</td><td>4</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212057" target="_blank">GSE212057</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199309" target="_blank">GSE199309</a>
+                                        </td><td>SRR21237865, SRR21237873, SRR21237881, SRR18462412</td></tr>
+                                    <tr><td>K562</td><td>6</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199309" target="_blank">GSE199309</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE167869" target="_blank">GSE167869</a>
+                                        </td><td>SRR18462409, SRR13800753, SRR13800754, SRR13800737, SRR13800738, SRR13800739</td></tr>
+                                    <tr><td>MB002</td><td>5</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229150" target="_blank">GSE229150</a>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261568" target="_blank">GSE261568</a>
+                                        </td><td>SRR28341540, SRR28341541, SRR28341542,SRR28341543</td></tr>
+                                    <tr><td>MCF7</td><td>7</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE195761" target="_blank">GSE195761</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178905" target="_blank">GSE178905</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163791" target="_blank">GSE163791</a>
+                                        </td><td>SRR17944548, SRR17944549, SRR14915857, SRR14915858, SRR13296901, SRR13296902, SRR13296903</td></tr>
+                                    <tr><td>MDA-MB-231</td><td>6</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178532" target="_blank">GSE178532</a>
+                                        </td><td>SRR11544576, SRR11544577, SRR11544578, SRR14870088, SRR14870089, SRR14870090</td></tr>
+                                    <tr><td>OVCAR8</td><td>4</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE246325" target="_blank">GSE246325</a>
+                                        </td><td>SRR26536798, SRR26536799, SRR26536802, SRR26536803</td></tr>
+                                    <tr><td>T98G</td><td>5</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112241" target="_blank">GSE112241</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=PRJNA580150" target="_blank">PRJNA580150</a>
+                                        </td><td>SRR10358029, SRR10358030, SRR10358031, SRR6881782, SRR6881783</td></tr>
+                                    <tr><td>U87MG</td><td>6</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147626" target="_blank">GSE147626</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235568" target="_blank">GSE235568</a>
+                                        </td><td>SRR11433766, SRR11433767, SRR11433768, SRR24991947, SRR24991948, SRR24991949</td></tr>
+                                    <tr><td>501Mel</td><td>7</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=PRJNA515302" target="_blank">PRJNA515302</a>,
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104869" target="_blank">GSE104869</a>
+                                        </td><td>SRR8473015, SRR8473019, SRR8473020, SRR6163777, SRR6163778, SRR6163779, SRR6163780</td></tr>
+                                </tbody>
+                            </table>
+                    
+                            <h4>Mouse</h4>
+                            <table class="dataset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sample Name</th>
+                                        <th>wild type (#)</th>
+                                        <th>Non-targeting sgRNA Control (#)</th>
+                                        <th>Zswim8 Knockout (#)</th>
+                                        <th>BioProject Number</th>
+                                        <th>SRR Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Eye</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391488, SRR24391489, SRR24391526, SRR24391480, SRR24391481, SRR24391536</td></tr>
+                                    <tr><td>Forebrain</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391522, SRR24391523, SRR24391534, SRR24391514, SRR24391515, SRR24391547</td></tr>
+                                    <tr><td>Heart</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391502, SRR24391503, SRR24391533, SRR24391510, SRR24391511, SRR24391543</td></tr>
+                                    <tr><td>Hindbrain</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391520, SRR24391521, SRR24391538, SRR24391512, SRR24391513, SRR24391546</td></tr>
+                                    <tr><td>Intestine</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391494, SRR24391495, SRR24391530, SRR24391486, SRR24391487, SRR24391545</td></tr>
+                                    <tr><td>Kidney</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391490, SRR24391491, SRR24391531, SRR24391482, SRR24391483, SRR24391539</td></tr>
+                                    <tr><td>Liver</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391492, SRR24391493, SRR24391527, SRR24391484, SRR24391485, SRR24391540</td></tr>
+                                    <tr><td>Lung</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391500, SRR24391501, SRR24391532, SRR24391508, SRR24391509, SRR24391542</td></tr>
+                                    <tr><td>Muscle</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391518, SRR24391519, SRR24391525, SRR24391478, SRR24391479, SRR24391535</td></tr>
+                                    <tr><td>Placenta</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391516, SRR24391517, SRR24391524, SRR24391476, SRR24391477, SRR24391537</td></tr>
+                                    <tr><td>Skin</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391496, SRR24391497, SRR24391528, SRR24391504, SRR24391505, SRR24391541</td></tr>
+                                    <tr><td>Stomach</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE231447" target="_blank">GSE231447</a></td><td>SRR24391498, SRR24391499, SRR24391529, SRR24391506, SRR24391507, SRR24391544</td></tr>
+                                     <tr><td>Embryonic Stem Cell</td><td>2</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB27315" target="_blank">PRJEB27315</a></td><td>ERR2640636, ERR2640637</td></tr>
+                                    <tr><td>iNeuron</td><td>3</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB27315" target="_blank">PRJEB27315</a></td><td>ERR2640652, ERR2640653, ERR2640654</td></tr>
+                                    <tr><td>MEF</td><td>3</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=GSE239373" target="_blank">GSE239373</a></td><td>SRR25443485, SRR25443484, SRR25443483</td></tr>
+                                    <tr><td>Neural Precursor</td><td>2</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB27315" target="_blank">PRJEB27315</a></td><td>ERR2640640, ERR2640641</td></tr>
+                                    <tr><td>Striatal cell</td><td>—</td><td>4</td><td>4</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1093144" target="_blank">PRJNA1093144</a></td><td>SRR34804890, SRR34804891, SRR34804892, SRR34804893, SRR34804894, SRR34804895, SRR34804896, SRR34804897</td></tr>
+                                </tbody>
+                            </table>
+                    
+                            <h4>Drosophila melanogaster</h4>
+                            <table class="dataset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sample Name</th>
+                                        <th>wild type (#)</th>
+                                        <th>Non-targeting sgRNA Control (#)</th>
+                                        <th>Dora Knockout (#)</th>
+                                        <th>BioProject Number</th>
+                                        <th>SRR Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>S2 cells</td><td>5</td><td>—</td><td>3</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196837" target="_blank">GSE196837</a>, 
+                                        </td><td>SRR18048483, SRR18048484, SRR18048425, SRR18048423, SRR18048424, SRR18048427, SRR18048468, SRR18048426</td></tr>
+                                    <tr><td>0–4 h Embryos</td><td>4</td><td>—</td><td>—</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196837" target="_blank">GSE196837</a>
+                                        </td><td>SRR18048437, SRR18048436, SRR18048435, SRR18048446</td></tr>
+                                    <tr><td>8–12 h Embryos</td><td>6</td><td>—</td><td>4</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196837" target="_blank">GSE196837</a>
+                                        </td><td>SRR18048461, SRR18048433, SRR18048512, SRR18048481, SRR18048482, SRR18048434, SRR18048499, SRR18048531, SRR18048442, SRR18048532</td></tr>
+                                    <tr><td>12–16 h Embryos</td><td>6</td><td>—</td><td>4</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196837" target="_blank">GSE196837</a>
+                                        </td><td>SRR18048539, SRR18048525, SRR18048508, SRR18048459, SRR18048432, SRR18048465, SRR18048448, SRR18048497, SRR18048529, SRR18048516</td></tr>
+                                    <tr><td>16–20 h Embryos wild type</td><td>5</td><td>—</td><td>4</td>  <td>
+                                        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196837" target="_blank">GSE196837</a>
+                                        </td><td>SRR18048421, SRR18048538, SRR18048479, SRR18048463, SRR18048527, SRR18048542, SRR18048443, SRR18048495, SRR18048501</td></tr>
+                                        <tr>
+                                        <td>Fly Non-targeting Control</td>
+                                        <td>—</td>
+                                        <td>3</td>
+                                        <td>—</td>
+                                        <td>
+                                            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA896239" target="_blank">PRJNA896239</a>
+                                        </td>
+                                        <td>SRR22129292, SRR22129294, SRR22129296</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                    
+                            <h4>Caenorhabditis elegans</h4>
+                            <table class="dataset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sample Name</th>
+                                        <th>wild type (#)</th>
+                                        <th>Non-targeting sgRNA Control (#)</th>
+                                        <th>Ebax Knockout (#)</th>
+                                        <th>BioProject Number</th>
+                                        <th>SRR Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Embryos</td><td>4</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA922944" target="_blank">PRJNA922944</a></td><td>SRR23049957, SRR23049959, SRR23049928, SRR23049954</td></tr>
+                                    <tr><td>L1</td><td>5</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68588" target="_blank">GSE68588</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE262626" target="_blank">GSE262626</a>,  <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267368" target="_blank">GSE267368</a></td><td>SRR2010468, SRR2010469, SRR28479534, SRR29013568, SRR29013569, SRR29013570, SRR29013571</td></tr>
+                                    <tr><td>L2</td><td>3</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266398" target="_blank">GSE266398</a></td><td>SRR28868053, SRR28868054, SRR28868055</td></tr>
+                                    <tr><td>L3</td><td>3</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA684142" target="_blank">PRJNA684142</a></td><td>SRR13238604, SRR13238605, SRR13238606</td></tr>
+                                    <tr><td>L4</td><td>3</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA922944" target="_blank">PRJNA922944</a></td><td>SRR23049963, SRR23049955, SRR23049961</td></tr>
+                                    <tr><td>Adult</td><td>4</td><td>—</td><td>—</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA922944" target="_blank">PRJNA922944</a>,  <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267368" target="_blank">GSE267368</a></td><td>SRR23049965, SRR23049966, SRR23049906, SRR23049937</td></tr>
+                                </tbody>
+                            </table>
+                    </div>
+            </section>
+
+            <section id="faq-3" class="card"></section>
+                <h2>3. What miRNA Expression Profile data is available in CLASHub? </h2>
+                    <div class="faq-answer">
+                    <p>
+                        microRNA Expression Profile data from four species: <strong>Human, Mouse, Drosophila melanogaster</strong>, and <strong>Caenorhabditis elegans</strong>. Below is the summary of available datasets:
+                    </p>
+
+                    <h4>Human</h4>
+                    <table class="dataset-table">
+                        <thead>
+                            <tr>
+                                <th>Sample Name</th>
+                                <th>Wild Type (#)</th>
+                                <th>Non-targeting sgRNA Control (#)</th>
+                                <th>ZSWIM8 Knockout (#)</th>
+                                <th>BioProject Number</th>
+                                <th>SRR Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>A549</td><td>—</td><td>3</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163387" target="_blank">GSE163387</a></td><td>SRR13264637, SRR13264638, SRR13264639, SRR13264640, SRR13264641, SRR13264642</td></tr>
+                            <tr><td>HEK293T</td><td>—</td><td>3</td><td>3</td>  <td>
+                                <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123627" target="_blank">GSE123627</a>,
+                                <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158025" target="_blank">GSE158025</a>
+                                </td><td>SRR12650650, SRR12650651, SRR12650652, SRR12650653, SRR12650654, SRR12650655</td></tr>
+                            <tr><td>HeLa</td><td>—</td><td>3</td><td>3</td>  <td>
+                                <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123627" target="_blank">GSE123627</a>,
+                                <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163387" target="_blank">GSE163387</a>
+                                </td><td>SRR13264643, SRR13264644, SRR13264645, SRR13264646, SRR13264647, SRR13264648</td></tr>
+                            <tr><td>K562</td><td>6</td><td>—</td><td>6</td>  <td>
+                                <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158025" target="_blank">GSE158025</a>,
+                                <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163388" target="_blank">GSE163388</a>
+                                </td><td>SRR12650656, SRR12650657, SRR12650658, SRR13264707, SRR13264708, SRR13264709, SRR12650659, SRR12650660, SRR12650661, SRR13264710, SRR13264711, SRR13264712</td></tr>
+                            <tr><td>MCF7</td><td>—</td><td>2</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163388" target="_blank">GSE163388</a></td><td>SRR13264649, SRR13264650, SRR13264651, SRR13264652, SRR13264653</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Mouse</h4>
+                    <table class="dataset-table">
+                        <thead>
+                            <tr>
+                                <th>Sample Name</th>
+                                <th>wild type (#)</th>
+                                <th>Non-targeting sgRNA Control (#)</th>
+                                <th>Zswim8 Knockout (#)</th>
+                                <th>BioProject Number</th>
+                                <th>SRR Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Brain</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941005, SRR24941026, SRR24940996, SRR24941021, SRR24941036, SRR24941000</td></tr>
+                            <tr><td>Heart</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941003, SRR24941027, SRR24940995, SRR24941022, SRR24941035, SRR24940999</td></tr>
+                            <tr><td>Kidney</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941001, SRR24940993, SRR24941029, SRR24941011, SRR24941033, SRR24941017</td></tr>
+                            <tr><td>Liver</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941004, SRR24940989, SRR24941030, SRR24941010, SRR24941032, SRR24941016</td></tr>
+                            <tr><td>Lung</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24940992, SRR24940998, SRR24941018, SRR24941008, SRR24941031, SRR24941015</td></tr>
+                            <tr><td>Intestine</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941002, SRR24940994, SRR24941028, SRR24941023, SRR24941012, SRR24941034</td></tr>
+                            <tr><td>Neuron</td><td>—</td><td>3</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163387" target="_blank">GSE163387</a></td><td>SRR13264632, SRR13264633, SRR13264634, SRR13264635, SRR13264636</td></tr>
+                            <tr><td>MEF</td><td>—</td><td>6</td><td>6</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163387" target="_blank">GSE163387</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158025" target="_blank">GSE158025</a></td><td>SRR13264626, SRR13264627, SRR13264628, SRR12650662, SRR12650663, SRR12650664, SRR13264629, SRR13264630, SRR13264631, SRR12650665, SRR12650666, SRR12650667</td></tr>
+                            <tr><td>Stomach</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941020, SRR24941009, SRR24940990, SRR24941006, SRR24941025, SRR24941013</td></tr>
+                            <tr><td>Skin</td><td>3</td><td>—</td><td>3</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235065" target="_blank">GSE235065</a></td><td>SRR24941019, SRR24940991, SRR24940997, SRR24941024, SRR24941007, SRR24941014</td></tr>
+                            <tr><td>Striatal cell </td><td>—</td><td>4</td><td>4</td><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1093144" target="_blank">PRJNA1093144</a></td><td>SRR28497187, SRR28497188, SRR28497191, SRR28497192, SRR28497193, SRR28497194, SRR28497195, SRR28497196</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Drosophila melanogaster</h4>
+                    <table class="dataset-table">
+                        <thead>
+                            <tr>
+                                <th>Sample Name</th>
+                                <th>Wild Type (#)</th>
+                                <th>Non-targeting sgRNA Control (#)</th>
+                                <th>Dora Knockout (#)</th>
+                                <th>BioProject Number</th>
+                                <th>SRR Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>S2 cells</td>
+                                <td>3</td>
+                                <td>—</td>
+                                <td>3</td>
+                                <td>
+                                    <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163388" target="_blank">GSE163388</a>
+                                </td>
+                                <td>SRR13264713, SRR13264714, SRR13264715, SRR13264716, SRR13264717, SRR13264718</td>
+                                </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Caenorhabditis elegans</h4>
+                    <table class="dataset-table">
+                        <thead>
+                            <tr>
+                                <th>Sample Name</th>
+                                <th>Wild Type (#)</th>
+                                <th>Non-targeting sgRNA Control (#)</th>
+                                <th>Ebax Knockout (#)</th>
+                                <th>BioProject Number</th>
+                                <th>Data Source</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Early Embryo</td><td>2</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013903, SRR29013904, SRR29013905, SRR29013906</td></tr>
+                            <tr><td>Late Embryo</td><td>2</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013899, SRR29013900, SRR29013901, SRR29013902</td></tr>
+                            <tr><td>L1</td><td>4</td><td>—</td><td>4</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013871, SRR29013872, SRR29013873, SRR29013874, SRR29013895, SRR29013896, SRR29013897, SRR29013898</td></tr>
+                            <tr><td>L2</td><td>2</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013891, SRR29013892, SRR29013893, SRR29013894</td></tr>
+                            <tr><td>L3</td><td>2</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013887, SRR29013888, SRR29013889, SRR29013890</td></tr>
+                            <tr><td>L4</td><td>5</td><td>—</td><td>4</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013866, SRR29013867, SRR29013868, SRR29013869, SRR29013870, SRR29013883, SRR29013884, SRR29013885, SRR29013886</td></tr>
+                            <tr><td>Gravid adult</td><td>2</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013879, SRR29013880, SRR29013881, SRR29013882</td></tr>
+                            <tr><td>Glp-4</td><td>2</td><td>—</td><td>2</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267367" target="_blank">GSE267367</a></td><td>SRR29013875, SRR29013876, SRR29013877, SRR29013878</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+            </section>
+
+            <section id="faq-4" class="card">
+                <h2>4. How is CLASH data analyzed in CLASHub? </h2>
+                                    <div class="faq-answer">
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 1: Data Upload and Input</strong><br>
+                            CLASHub accepts paired-end <strong>FASTQ</strong> files or clean single-end <strong>FASTA</strong> files. Users need to provide minimal information to initiate the analysis.<br>
+                            <strong>1.1 Paired-end Adapter Sequences:</strong><br>
+                            5′ Adapter Sequence (default): <code>GATCGTCGGACTGTAGAACT</code><br>
+                            3′ Adapter Sequence (default): <code>TGGAATTCTCGGGTGCCAAG</code><br>
+                            <strong>1.2 UMI Configuration:</strong> Users specify 5′ and 3′ Unique Molecular Identifier (UMI) lengths. Setting both to 0 automatically skips deduplication and UMI-trimming.<br>
+                            <strong>1.3 Target species:</strong> (e.g., <em>Homo sapiens, Mus musculus, Drosophila melanogaster, Caenorhabditis elegans</em>)<br>
+                            <strong>1.4 Output file names & Email address</strong>
+                        </p>
+                        
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 2: Data Preprocessing</strong><br>
+                            CLASHub automatically processes the uploaded data. For <strong>paired-end FASTQ</strong> files, the preprocessing pipeline includes:<br>
+                            <strong>2.1 Adapter Trimming:</strong> Adapter sequences are removed using 
+                            <code>
+                                <a href="https://doi.org/10.14806/ej.17.1.200" target="_blank">cutadapt (v2.10)</a>
+                            </code>.<br>
+                            <strong>2.2 Read Merging:</strong> Overlapping paired-end reads are merged using 
+                            <code>
+                                <a href="https://doi.org/10.1093/bioinformatics/btt593" target="_blank">PEAR (v0.9.6)</a>
+                            </code>.<br>
+                            <strong>2.3 Redundancy Collapse & UMI Trimming:</strong> If UMIs are present, redundant reads are collapsed using <code><a href="https://github.com/agordon/fastx_toolkit" target="_blank">fastx_collapser</a></code>, and UMIs are trimmed. If UMIs are absent (lengths = 0), this step is bypassed.
+                        </p>
+
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 3: Genome Mapping & Peak Calling</strong><br>
+                            Cleaned sequences are aligned to the reference genome.<br>
+                            <strong>3.1 Downsampling:</strong> To prevent memory overload, files exceeding 20 million reads are downsampled prior to mapping.<br>
+                            <strong>3.2 Alignment:</strong> Reads are aligned using <code>HISAT2</code>, sorted with <code>SAMtools</code>, and converted to BED format.<br>
+                            <strong>3.3 Peak Calling:</strong> <code>Piranha</code> assesses target site confidence via peak-calling to identify high-confidence binding sites.<br>
+                            <strong>3.4 Visualization:</strong> BigWig (bw) files are automatically generated for direct inspection of read coverage in genome browsers like IGV.
+                        </p>
+                        
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 4: Hybrid Identification</strong><br>
+                            The cleaned data is processed to identify miRNA-target hybrids using:
+                            <br><strong>4.1 <a href="https://doi.org/10.1016/j.ymeth.2013.10.015" target="_blank">hyb</a>:</strong> Aligns reads to the reference transcript database using <code>bowtie2</code>.<br>
+                            <strong>4.2 Reference Database:</strong> Includes <code>Ensembl genome</code> assemblies and mature miRNAs from <code>miRBase</code>.<br>
+                            <strong>4.3 Binding Stability:</strong> Free energy (<code>ΔG</code>) and pairing patterns are calculated using <code>UNAfold (v3.8)</code>.
+                        </p>
+                        
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 5: Conservation Score Calculation</strong><br>
+                            Conservation scores assess evolutionary conservation of miRNA binding sites using phyloP tracks from the <strong>UCSC Genome Browser</strong> (e.g., <code>g38.phyloP100way</code> for human, <code>mm39.phyloP35way</code> for mouse).
+                        </p>
+                        
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 6: Output Results</strong><br>
+                            The final output includes an HTML summary report and a detailed results table featuring miRNA Name, Pairing Pattern, Gene Info, Conservation Score, Free Energy, Transcript Annotation, Piranha Peak p-values, and Normalized Hybrid Abundance.
+                        </p>
+                    </div>
+            </section>
+
+            <section id="faq-5" class="card">
+                <h2>5. How is miRNA AQ-seq data analyzed in CLASHub? </h2>
+                                    <div class="faq-answer">
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 1: Data Upload and Input</strong><br>
+                            Users upload miRNA sequencing data in one of three supported formats:<br>
+                            <strong>1.1 Paired-End FASTQ (.gz) or Single-End FASTQ (.gz):</strong> Requires adapter sequences.<br>
+                            <strong>1.2 Cleaned Single-End FASTA (.gz):</strong> Does not require adapter sequences.<br>
+                            <strong>1.3 UMI Configuration:</strong> For libraries with UMIs (e.g., AQ-seq), specify the UMI length. For standard small RNA-seq libraries (e.g., Illumina TruSeq or NEBNext) lacking UMIs, set lengths to 0.
+                        </p>
+                
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 2: Data Preprocessing</strong><br>
+                            CLASHub processes uploaded data to produce clean FASTA files:<br>
+                            <strong>2.1 Adapter Trimming:</strong> Adapters are removed using <code>cutadapt</code>.<br>
+                            <strong>2.2 Read Merging:</strong> For paired-end files, reads are merged using <code>PEAR</code>.<br>
+                            <strong>2.3 Redundancy Collapse & UMI Trimming:</strong> If UMIs are specified (>0), PCR duplicates are collapsed via <code>fastx_collapser</code> and UMIs trimmed. If UMI lengths are 0, these steps are automatically skipped.
+                        </p>
+                
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 3: miRNA Identification and Quantification</strong><br>
+                            The cleaned data is analyzed for miRNA quantification using <code>CLASHub.py</code>.<br>
+                            <strong>3.1 miRNA Mapping:</strong> The first 18 nucleotides of each trimmed read are perfectly matched to mature miRNA sequences from <code>miRBase (Release 22.1)</code>.<br>
+                            <strong>3.2 Quantification:</strong> Both total miRNA expression levels and isoform-specific abundances (capturing 3′ variations) are accurately estimated.
+                        </p>
+                
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 4: Output Results</strong><br>
+                            The analysis generates a Total miRNA Table, an Isoform Expression Table, and a Summary HTML Report with key preprocessing and alignment metrics.
+                        </p>
+                    </div>
+            </section>
+
+            <section id="faq-6" class="card">
+                <h2>6. How is RNA-seq data analyzed in CLASHub?</h2>
+                                <div class="faq-answer">
+                    <p>
+                        The RNA-seq pipeline integrates <strong>HISAT2</strong>, <strong>StringTie</strong>, and <strong>DESeq2</strong>, with automated QC, optional Exon-Intron Split Analysis (EISA), and auto-repair mechanisms.
+                    </p>
+
+                    <p>
+                        <strong style="font-size: 1.2em;">Step 1: Data Upload and Configuration</strong><br>
+                        Users configure Adapter Sequences, UMI lengths (if applicable), Library Type (Stranded vs. Unstranded), and optionally enable <strong>EISA</strong> to distinguish post-transcriptional regulation.
+                    </p>
+            
+                    <p>
+                        <strong style="font-size: 1.2em;">Step 2: Preprocessing, Alignment & QC</strong><br>
+                        <strong>2.1 Auto-Repair:</strong> Broken paired-end reads are automatically checked and repaired using <code>repair.sh</code> to maintain read integrity.<br>
+                        <strong>2.2 Trimming:</strong> Adapters and specified UMIs are removed using <code>Cutadapt</code>.<br>
+                        <strong>2.3 Alignment:</strong> Reads are aligned to the reference genome using <code>HISAT2</code>. Strand-specific flags are applied based on the library configuration.<br>
+                        <strong>2.4 Quality Check:</strong> <code>RSeQC</code> calculates read distribution across genomic features to verify library quality.<br>
+                        <strong>2.5 Sorting:</strong> SAM files are sorted to BAM using <code>SAMtools</code>.
+                    </p>
+            
+                    <p>
+                        <strong style="font-size: 1.2em;">Step 3: Standard Quantification</strong><br>
+                        <strong>3.1 Abundance Estimation:</strong> <code>StringTie</code> quantifies gene expression using full Ensembl annotations to generate Transcripts Per Million (TPM).<br>
+                        <strong>3.2 Count Generation:</strong> The <code>prepDE.py3</code> script extracts raw read counts for differential analysis.
+                    </p>
+            
+                    <p>
+                        <strong style="font-size: 1.2em;">Step 4: EISA Quantification (Optional Add-on)</strong><br>
+                        If enabled, CLASHub performs parallel quantification using custom <strong>Exon-only</strong> and <strong>Intron-only</strong> GTF files (with overlapping genes excluded and boundaries masked) to generate separate count matrices for intronic and exonic reads.
+                    </p>
+            
+                    <p>
+                        <strong style="font-size: 1.2em;">Step 5: Differential Expression & Classification</strong><br>
+                        <strong>5.1 Standard DE:</strong> <code>DESeq2</code> calculates differential expression.<br>
+                        <strong>5.2 EISA Classification:</strong> If EISA is selected, changes are classified as <em>Post-transcriptional</em> (exons and introns diverge), <em>Transcriptional</em> (track together), or <em>Ambiguous</em>.
+                    </p>
+            
+                    <p>
+                        <strong style="font-size: 1.2em;">Step 6: Output Files</strong><br>
+                        Outputs include QC reports (HTML), standard DE tables (DESeq2 output), TPM/Count matrices, and—if EISA is enabled—classification tables isolating regulatory mechanisms.
+                    </p>
+                </div>
+            </section>
+                
+            <section id="faq-7" class="card">
+                <h2>7. How is cumulative fraction curve analysis performed in CLASHub? </h2>
+                                    <div class="faq-answer">
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 1: Data Upload and Input</strong><br>
+                            Users upload a differential gene expression CSV file containing GeneName, BaseMean, and log2FoldChange. A BaseMean threshold (default: 100) filters out low-expression transcripts to ensure robust results.
+                        </p>
+                
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 2: Target Identification</strong><br>
+                            Target genes are classified into two groups:<br>
+                            <strong>2.1 CLASH-Derived Targets:</strong> Identified via experimental CLASH data (Conserved and All targets).<br>
+                            <strong>2.2 TargetScan-Derived Targets:</strong> Predicted interactions extracted from TargetScan databases.
+                        </p>
+                
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 3: Curve Generation and Analysis Modes</strong><br>
+                            The tool compares fold change distributions between miRNA targets and non-target genes using two available modes:<br>
+                            <strong>3.1 Standard Analysis:</strong> Groups targets by broad conservation status.<br>
+                            <strong>3.2 Stringent Filtering:</strong> Narrows the analysis specifically to the top 25% of high-efficacy targets based on TargetScan Context++ scores, revealing more pronounced repression patterns.<br>
+                            Statistical differences between target groups and background non-targets are quantified via Mann–Whitney U tests.
+                        </p>
+                
+                        <p>
+                            <strong style="font-size: 1.2em;">Step 4: Output Results</strong><br>
+                            Outputs include SVG files of the Cumulative Fraction Curves visually plotting the repression shifts, alongside a comprehensive merged CSV dataset that annotates each gene with its specific target classification (e.g., top 25% Context++, high-confidence CLASH overlaps, or non-targets).
+                        </p>
+                    </div>
+            </section>
+      </article>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="copyright-year">2025</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script src="../Index_php/track.js"></script>
+  </body>
+</html>

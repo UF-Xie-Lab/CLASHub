@@ -1,0 +1,229 @@
+.intro {
+    flex: none;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+/* 外层容器：居中 + 最大宽度 */
+.index_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 首页主内容区域：搜索块 + 图片块 */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 60px; /* 搜索框和图片的左右间距 */
+    margin-bottom: 0;
+}
+
+/* 左侧：搜索容器 */
+.search-container {
+    flex: 1 1 320px;
+    padding-right: 20px;
+}
+
+/* --- Fix alignment + remove unwanted bold + equal input width --- */
+.search-container form section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.search-container form section label {
+    width: 150px;          /* consistent label width */
+    font-weight: normal;   /* remove bold */
+    display: inline-block;
+}
+
+.search-container form button {
+    margin-left: 0 !important;
+    display: block;
+    padding: 10px 0;              /* taller button */
+    width: 200px;                 /* same width as above */
+    text-align: center;           /* center the text */
+}
+
+/* 右侧：介绍图容器 */
+.image-container {
+    flex: 1 1 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 100px;
+}
+
+/* 首页的介绍图 */
+.clash-intro-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* 首页下方大段简介背景框 */
+.intro {
+    background-color: rgba(242, 238, 238, 0.209);
+    padding: 5px 5px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+    flex: none;
+}
+
+/* intro 文本 */
+.intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* 首页标题 */
+.search-title {
+    font-size: 24px;
+}
+
+/* 首页 header 图片 */
+header img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* -----------------------------
+   Fix alignment for Steps 1–4
+------------------------------ */
+
+/* Step labels:统一粗体，不使用 strong 的粗体效果 */
+.search-container .step-label {
+    font-weight: normal !important;
+}
+
+/* 每一行 Step 的布局一致 */
+.search-container section {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+/* 标签固定宽度，统一对齐 */
+.search-container section label {
+    width: 150px;
+    display: inline-block;
+    font-weight: normal;
+}
+
+/* 所有输入框宽度统一 */
+.search-container section select,
+.search-container section input[type="text"] {
+    width: 260px !important;
+    max-width: 260px !important;
+    flex: none !important;
+    height: 32px;        /* unified height */
+    padding: 4px 6px;    /* consistent padding */
+    font-size: 14px;     /* consistent text size */
+    line-height: 24px;   /* centers text vertically */
+}
+
+/* Search 按钮与输入框左对齐 */
+.search-container button {
+    margin-left: 150px !important; /* 与 label 宽度一致 */
+}
+
+/* 让首页的 section 是两列布局 */
+.index_container section,
+.main-content section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+ 
+/* 固定 Step 1/2/3/4 的 label 宽度 */
+.index_container .step-label,
+.main-content .step-label {
+    width: 150px;       /* 保证完全对齐 */
+    font-weight: normal; /* 确保 label 不加粗 */
+}
+
+/* 输入框与下拉菜单统一长度 */
+.index_container .uniform-width,
+.main-content .uniform-width {
+    width: 260px;       /* 四个步骤的框统一宽度 */
+    max-width: 260px;
+}
+
+/* 统一按钮样式 */
+#clash_search_button,
+#rna_seq_search_button,
+#mirna_seq_search_button {
+    margin-left: 0 !important;
+    width: 120px;          /* ← 按钮宽度 */
+    height: 30px;          /* ← 按钮高度 */
+    font-size: 16px;       /* ← 字体大小 */
+    text-align: center;    /* ← 水平居中 */
+    display: flex;
+    align-items: center;   /* ← 垂直居中 */
+    justify-content: center; /* ← 水平居中 */
+}
+
+/* 首页 select 高度控制 */
+.search-container section select {
+    height: 32px;         /* ← 直接控制高度 */
+    padding: 4px 6px;     /* ← 上下 padding 更小 */
+    font-size: 14px;      /* ← 字体变小一点 */
+    line-height: 24px;    /* ← 控制文字居中 */
+}
+
+/* =========================================
+   Help & Tutorials Section (Matches Analyzer style)
+   ========================================= */
+
+.help-section {
+    margin-top: 40px;       /* 增加顶部间距，与正文分开 */
+    margin-bottom: 30px;    /* 增加底部间距，与 Citation 框分开 */
+    padding-top: 20px;      /* 内容与上方分割线的距离 */
+    border-top: 1px solid #eee; /* 添加一条淡淡的分割线，增加精致感 */
+} 
+
+.help-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;      /* 字体稍微大一点点，适应主页宽屏 */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.help-section .help-list {
+    list-style: none;       /* 去掉圆点 */
+    padding: 0;
+    margin: 0;
+}
+
+.help-section .help-list li {
+    margin-bottom: 8px;     /* 每个链接之间稍微松散一点 */
+}
+
+.help-section .help-list a {
+    text-decoration: none;
+    color: #0066cc;         /* 经典的链接蓝 */
+    font-size: 1rem;
+    transition: color 0.2s;
+    display: inline-block;  /* 让链接块更好点击 */
+}
+
+.help-section .help-list a:hover {
+    text-decoration: underline;
+    color: #004499;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLASHub — Database Tutorial</title>
+    <link rel="icon" href="../../Index_php/CLASH_favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/tutorial.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="tutorial_database.js" defer></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body class="tutorial-page">
+    <header>
+        <a href="../../index.html" class="logo-link" title="Back to Database">
+            <img src="../../Index_php/CLASHub_logo.png" alt="CLASHub Logo" style="max-width: 600px; height: auto;">
+        </a>
+        <hr class="gradient-line">
+    </header>
+
+    <main class="index_container tutorial-container">
+        <aside class="toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ol>
+                <li><a class="toc-link" href="#intro">Overview</a></li>
+                <li><a class="toc-link" href="#clash">CLASH search</a></li>
+                <li><a class="toc-link" href="#external">External resources</a></li>
+                <li><a class="toc-link" href="#expression">Gene & microRNA Expression</a></li>
+            </ol>
+        </aside>
+
+        <article class="tutorial-content">
+            <section id="intro" class="card">
+                <h1>CLASHub Database Tutorial</h1>
+                <p>
+                    This short tutorial walks you through the three database search modes available on the
+                    <a href="../../index.html">CLASHub</a> home page:
+                    <strong>CLASH</strong>, <strong>Gene Expression</strong>, and <strong>microRNA Expression</strong>.
+                    You’ll learn the required steps, how autocomplete works, and how to avoid common submission issues.
+                </p>
+            </section>
+
+            <section id="clash" class="card">
+
+                <!-- Figure 1: annotated overview -->
+                <figure class="figure-box">
+                    <img src="../../image/CLASH_tutorial_fig1.png" alt="Annotated CLASH search and results overview (numbers 1–8)" class="figure-img">
+                    <figcaption class="figure-caption">
+                        <strong>Figure 1. User interface for querying miRNA-target hybrids in the CLASH database.</strong><br>
+                        <strong>(A)</strong> The CLASHub web interface guides users by selecting
+                        <span class="badge">1</span> data type,
+                        <span class="badge">2</span> species,
+                        <span class="badge">3</span> sample type and
+                        <span class="badge">4</span> miRNA or gene ID in the query fields, then performing the
+                        <span class="badge">5</span> <em>Search</em> function.
+                        <br>
+                        <strong>(B)</strong> The example CLASH output table summarizes detected miR‑7 hybrids in A549 cells
+                        (<span class="badge">6</span>). Each row (<span class="badge">7</span>) includes comprehensive information (miRNA name, predicted pairing pattern, gene, gene ID, genome position, target site type, and abundance metrics). The
+                        <span class="badge">8</span> <em>Download Table</em> button exports the table for offline analysis. Interactive links allow opening miRBase (via miRNA name), Ensembl (via gene ID), and UCSC Genome Browser (via genome position).
+                    </figcaption>
+                </figure>
+            </section>
+
+
+            <section id="external" class="card">
+                <h2>External resources</h2>
+            <figure class="figure-box">
+                <img src="../../image/CLASH_tutorial_fig2.png"
+                    alt="Example external resources linked from CLASH results table"
+                    class="figure-img" style="width: 60%;">
+                <figcaption class="figure-caption">
+                    <strong>Figure 2. Example external resources linked from the CLASH results table.</strong>
+                    <strong>(A)</strong> miRBase page opened by clicking on the miRNA name (hsa-miR-7-5p).
+                    <strong>(B)</strong> Ensembl gene summary page opened by clicking on the gene ID (OIP5-AS1).
+                    <strong>(C)</strong> UCSC Genome Browser view showing the genomic locus corresponding to the hybrid site.
+                </figcaption>
+            </figure>
+            </section>
+
+            <section id="expression" class="card">
+                <h2>Gene & microRNA Expression (RNA/miRNA-seq)</h2>
+            <figure class="figure-box">
+                <img src="../../image/CLASH_tutorial_fig3.png"
+                    alt="CLASHub gene and miRNA expression database interface and example outputs"
+                    class="figure-img" style="width: 60%;">
+                <figcaption class="figure-caption">
+                <strong>Figure 3. CLASHub gene and miRNA expression database interface and example outputs.</strong>
+                <strong>(A)</strong> User interface for exploring RNA-seq data and miRNA-seq data across tissue and cell types.
+                Users <span class="badge">1</span> select the “Gene Expression” or “miRNA expression” in the data type,
+                <span class="badge">2</span> specify the species, and <span class="badge">3</span> enter a gene name,
+                Ensembl gene ID or miRNA name. <span class="badge">4</span> Clicking the <em>Search</em>
+                retrieves expression profiles. Example output bar plots showing transcript abundance in TPM (Transcripts Per Million) 
+                <strong>(B)</strong> or miRNA abundance in CPM (Counts Per Million) <strong>(C)</strong> across mouse tissues
+                and cell types. <span class="badge">5</span> The <em>Download CSV</em> button allows exporting the data
+                table for offline analysis.
+                </figcaption>
+            </figure>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="copyright-year">2025</span> CLASHub 1.0. All rights reserved. 
+            Questions: <a href="mailto:luli1@ufl.edu">luli1@ufl.edu</a>
+        </p>
+    </footer>
+
+    <script src="../../Index_php/track.js"></script>
+</body>
+</html>
